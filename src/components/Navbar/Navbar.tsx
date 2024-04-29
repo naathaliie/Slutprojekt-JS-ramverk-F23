@@ -5,18 +5,21 @@ const Navbar = () => {
   return (
     <>
       <div className="NavBar">
-        <div className="nav-title">
-          <NavLink key={"home"} to={"/"} className="title">
-            Monster University
+        <div className="nav-search">
+          <NavLink key={"home"} to={"/"} className="search">
+            Sökfält
           </NavLink>
         </div>
 
-        <div className="nav-links">
-          {/* <NavLink key={"home"} to={"/"}>
-              HomePage
-            </NavLink> */}
-          <NavLink key={"allMonsters"} to={"/monsters"}>
-            Alla Monster
+        <div className="nav-loggo">
+          <NavLink key={"home"} to={"/"} className="home">
+            THE LIBRARY
+          </NavLink>
+        </div>
+
+        <div className="nav-myPage">
+          <NavLink key={"myPage"} to={"/monsters"} className="myPage">
+            😍
           </NavLink>
         </div>
       </div>
