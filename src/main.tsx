@@ -2,14 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import HomePage from "./routes/HomePage/HomePage.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import "./index.css";
+import "./main.scss";
 import RootPage from "./routes/RootPage/RootPage.tsx";
+import ErrorPage from "./routes/ErrorPage/ErrorPage.tsx";
 
 //The router for all the paths
 const router = createBrowserRouter([
   {
     path: "/",
     element: <RootPage />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",

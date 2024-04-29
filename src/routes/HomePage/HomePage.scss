@@ -1,3 +1,8 @@
+@import "../../scss/variables/fonts.scss";
+@import "../../scss/variables/colors.scss";
+
 .HomePage{
-    color: hotpink;
+    color: $color-blue;
+    font-family: $font-primary-montserrat;
+    border: solid black 2px;
 }

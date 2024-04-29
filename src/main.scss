@@ -1,0 +1,9 @@
+@import "./scss/base/base.scss";
+@import "./scss/variables/fonts.scss";
+
+body{
+    background-color: rgb(255, 255, 255);
+    height: auto;
+    width: 100vw;
+    font-family: $font-primary-montserrat;
+}
