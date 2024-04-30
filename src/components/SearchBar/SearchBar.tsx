@@ -23,10 +23,14 @@ const SearchBar = () => {
       console.log("searchTerm ändrades, du sökte på, ", searchTerm);
 
       try {
-        const authorResponse = await axios.get(`${authorAPI}${searchTerm}`);
+        const authorResponse = await axios.get(
+          `${authorAPI}${searchTerm}&limit=10`
+        );
         const authorData = authorResponse.data;
 
-        const bookResponse = await axios.get(`${bookAPI}${searchTerm}`);
+        const bookResponse = await axios.get(
+          `${bookAPI}${searchTerm}&limit=10`
+        );
         const bookData = bookResponse.data;
 
         if (!ignore) {
