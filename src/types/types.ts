@@ -1,14 +1,18 @@
 export type oneBook = {
-  
-}
+  docs: [];
+  numFound: number;
+  numFoundExact: boolean;
+  num_found: number;
+  offset: any;
+  q: string;
+  start: number;
+};
 
 export type oneAuthor = {
-  
-}
+  num_found: number;
+  start: number;
+  numFoundExact: boolean;
+  docs: [];
+};
 
-/* Söka bok:
-https://openlibrary.org/search.json?q=
-
-söka författare:
-https://openlibrary.org/search/authors.json?q=
- */
+export type fetchedData = {};

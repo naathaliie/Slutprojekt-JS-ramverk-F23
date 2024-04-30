@@ -1,37 +1,44 @@
 import { useEffect, useRef, useState } from "react";
 import "./SearchBar.scss";
-import { useFetch } from "../../hooks/useFetch";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
+import { fetchedData, oneAuthor, oneBook } from "../../types/types";
+
+const bookAPI = "https://openlibrary.org/search.json?q=";
+const authorAPI = "https://openlibrary.org/search.json?author=";
 
 const SearchBar = () => {
   const [inputTerm, setInputTerm] = useState("");
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
-  const [foundData, setFoundData] = useState<any>(null);
+  const [foundData, setFoundData] = useState<any | null>(null); // ÄNDRA
 
   useEffect(() => {
     let ignore = false;
 
-    const fetchApi = async () => {
-      console.log("Jag ändrades, du sökte på, ", searchTerm);
+    const fetchData = async () => {
+      console.log("searchTerm ändrades, du sökte på, ", searchTerm);
+
       try {
-        const response = await axios.get(
-          `https://openlibrary.org/search.json?q=${searchTerm}`
-        );
+        const response = await axios.get(`${authorAPI}${searchTerm}`);
         const data = response.data;
-        setFoundData(data);
+        if (!ignore) {
+          setFoundData(data);
+          setSearchTerm(""); //"cleans up the searchterm"
+        }
       } catch (error) {
-        throw new Error("Blabla det fungerar inte");
+        throw new Error("Blabla not working");
       }
     };
 
-    fetchApi();
+    if (searchTerm !== "") {
+      fetchData();
+    }
 
     return () => {
       ignore = true;
     };
-  }, [searchTerm, setFoundData]);
+  }, [searchTerm]);
 
   const handleChange = () => {
     if (inputRef.current !== null) {
@@ -45,7 +52,7 @@ const SearchBar = () => {
     inputRef.current?.focus();
   };
 
-  foundData && console.log("datan = ", foundData);
+  foundData?.num_found > 0 && console.log("datan = ", foundData);
 
   return (
     <div className="SearchBar">
