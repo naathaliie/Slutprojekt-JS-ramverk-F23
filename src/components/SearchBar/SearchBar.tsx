@@ -11,7 +11,7 @@ const SearchBar = () => {
   const [inputTerm, setInputTerm] = useState("");
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
-  const [foundBookData, setFoundBookData] = useState<fetchedData | null>(null); // ÄNDRA  const [foundBookData, setFoundBookData] = useState<any | null>(null); // ÄNDRA
+  const [foundBookData, setFoundBookData] = useState<fetchedData | null>(null);
   const [foundAuthorData, setFoundAuthorData] = useState<fetchedData | null>(
     null
   ); // ÄNDRA
@@ -32,7 +32,6 @@ const SearchBar = () => {
         if (!ignore) {
           setFoundBookData(bookData);
           setFoundAuthorData(authorData);
-          setSearchTerm(""); //"cleans up the searchterm"
         }
       } catch (error) {
         throw new Error("Blabla not working");
