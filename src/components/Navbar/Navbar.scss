@@ -4,8 +4,8 @@
     border: solid black 2px;
     height: 3rem;
     display: flex;
-    place-items: center;
-    justify-content: space-between;
+    align-items: center;
+    justify-content:space-between;
     margin-top: 5px;
     padding: 0px 10px 0px 10px;
   .nav-search {
@@ -16,11 +16,13 @@
     }
 
     .nav-loggo{
+
         .home{
          text-decoration:none; 
          font-size: larger;
          font-weight: bolder;
-         color: $color-black;  
+         color: $color-black; 
+         align-self: center;
         }
         
     }

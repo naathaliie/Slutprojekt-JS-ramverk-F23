@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./main.scss";
 import RootPage from "./routes/RootPage/RootPage.tsx";
 import ErrorPage from "./routes/ErrorPage/ErrorPage.tsx";
+import SearchResultPage from "./routes/SearchResultPage/SearchResultPage.tsx";
 
 //The router for all the paths
 const router = createBrowserRouter([
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <HomePage />,
+      },
+      {
+        path: "/searchResult",
+        element: <SearchResultPage />,
       },
     ],
   },

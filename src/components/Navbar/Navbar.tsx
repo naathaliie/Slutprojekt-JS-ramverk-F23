@@ -1,14 +1,13 @@
 import { NavLink, Outlet } from "react-router-dom";
 import "./Navbar.scss";
+import SearchBar from "../SearchBar/SearchBar";
 
 const Navbar = () => {
   return (
     <>
       <div className="NavBar">
         <div className="nav-search">
-          <NavLink key={"home"} to={"/"} className="search">
-            Sökfält
-          </NavLink>
+          <SearchBar />
         </div>
 
         <div className="nav-loggo">
