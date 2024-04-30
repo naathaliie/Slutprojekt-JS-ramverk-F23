@@ -1,12 +1,4 @@
-export type oneBook = {
-  docs: [];
-  numFound: number;
-  numFoundExact: boolean;
-  num_found: number;
-  offset: any;
-  q: string;
-  start: number;
-};
+export type oneBook = {};
 
 export type oneAuthor = {
   num_found: number;
@@ -15,4 +7,12 @@ export type oneAuthor = {
   docs: [];
 };
 
-export type fetchedData = {};
+export type fetchedData = {
+  docs: [];
+  numFound: number;
+  numFoundExact: boolean;
+  num_found: number;
+  offset: any;
+  q: string;
+  start: number;
+};

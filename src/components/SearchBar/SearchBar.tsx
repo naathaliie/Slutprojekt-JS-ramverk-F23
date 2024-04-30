@@ -2,16 +2,19 @@ import { useEffect, useRef, useState } from "react";
 import "./SearchBar.scss";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
-import { fetchedData, oneAuthor, oneBook } from "../../types/types";
+import { fetchedData } from "../../types/types";
 
-const bookAPI = "https://openlibrary.org/search.json?q=";
+const bookAPI = "https://openlibrary.org/search.json?title=";
 const authorAPI = "https://openlibrary.org/search.json?author=";
 
 const SearchBar = () => {
   const [inputTerm, setInputTerm] = useState("");
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
-  const [foundData, setFoundData] = useState<any | null>(null); // ÄNDRA
+  const [foundBookData, setFoundBookData] = useState<fetchedData | null>(null); // ÄNDRA  const [foundBookData, setFoundBookData] = useState<any | null>(null); // ÄNDRA
+  const [foundAuthorData, setFoundAuthorData] = useState<fetchedData | null>(
+    null
+  ); // ÄNDRA
 
   useEffect(() => {
     let ignore = false;
@@ -20,10 +23,15 @@ const SearchBar = () => {
       console.log("searchTerm ändrades, du sökte på, ", searchTerm);
 
       try {
-        const response = await axios.get(`${authorAPI}${searchTerm}`);
-        const data = response.data;
+        const authorResponse = await axios.get(`${authorAPI}${searchTerm}`);
+        const authorData = authorResponse.data;
+
+        const bookResponse = await axios.get(`${bookAPI}${searchTerm}`);
+        const bookData = bookResponse.data;
+
         if (!ignore) {
-          setFoundData(data);
+          setFoundBookData(bookData);
+          setFoundAuthorData(authorData);
           setSearchTerm(""); //"cleans up the searchterm"
         }
       } catch (error) {
@@ -52,7 +60,8 @@ const SearchBar = () => {
     inputRef.current?.focus();
   };
 
-  foundData?.num_found > 0 && console.log("datan = ", foundData);
+  foundBookData ? console.log("bookData = ", foundBookData) : "";
+  foundAuthorData ? console.log("authorData = ", foundAuthorData) : "";
 
   return (
     <div className="SearchBar">
