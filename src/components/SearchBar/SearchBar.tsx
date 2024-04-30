@@ -3,7 +3,7 @@ import "./SearchBar.scss";
 import axios from "axios";
 import { NavLink, Outlet } from "react-router-dom";
 import { fetchedData } from "../../types/types";
-import SearchResultPage from "../../routes/SearchResultPage/SearchResultPage";
+import SearchResultPage from "../../routes/SearchPage/SearchResultPage/SearchResultPage";
 
 const bookAPI = "https://openlibrary.org/search.json?title=";
 const authorAPI = "https://openlibrary.org/search.json?author=";
@@ -77,12 +77,6 @@ const SearchBar = () => {
         placeholder="Bok/Författare..."
       />
       <button onClick={handleClick}>Sök</button>
-      {/*   {(foundBookData || foundAuthorData) && (
-        <Outlet
-          books={foundBookData}
-          authors={foundAuthorData}
-        />
-      )} */}
     </div>
   );
 };

@@ -7,7 +7,10 @@ const Navbar = () => {
     <>
       <div className="NavBar">
         <div className="nav-search">
-          <SearchBar />
+          <NavLink key={"search"} to={"/searchPage"}>
+            {" "}
+            SÖK{" "}
+          </NavLink>
         </div>
 
         <div className="nav-loggo">

@@ -5,6 +5,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./main.scss";
 import RootPage from "./routes/RootPage/RootPage.tsx";
 import ErrorPage from "./routes/ErrorPage/ErrorPage.tsx";
+import SearchPage from "./routes/SearchPage/SearchPage.tsx";
+import SearchResultPage from "./routes/SearchPage/SearchResultPage/SearchResultPage.tsx";
 
 //The router for all the paths
 const router = createBrowserRouter([
@@ -17,7 +19,16 @@ const router = createBrowserRouter([
         path: "/",
         element: <HomePage />,
       },
-      {},
+      {
+        path: "/searchPage",
+        element: <SearchPage />,
+        children: [
+          {
+            path: "/searchPage/test",
+            element: <SearchResultPage books={null} authors={null} />,
+          },
+        ],
+      },
     ],
   },
 ]);

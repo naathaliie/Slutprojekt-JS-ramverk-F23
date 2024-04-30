@@ -1,4 +1,4 @@
-import { fetchedData } from "../../types/types";
+import { fetchedData } from "../../../types/types";
 import "./SearchResultPage.scss";
 
 type SearchResultPageProps = {
