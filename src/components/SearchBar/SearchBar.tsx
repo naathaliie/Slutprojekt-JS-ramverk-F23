@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import "./SearchBar.scss";
 import axios from "axios";
-import { NavLink } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import { fetchedData } from "../../types/types";
+import SearchResultPage from "../../routes/SearchResultPage/SearchResultPage";
 
 const bookAPI = "https://openlibrary.org/search.json?title=";
 const authorAPI = "https://openlibrary.org/search.json?author=";
@@ -75,11 +76,13 @@ const SearchBar = () => {
         ref={inputRef}
         placeholder="Bok/Författare..."
       />
-      <button onClick={handleClick}>
-        <NavLink key={"search"} to={"/searchResult"}>
-          Sök
-        </NavLink>
-      </button>
+      <button onClick={handleClick}>Sök</button>
+      {/*   {(foundBookData || foundAuthorData) && (
+        <Outlet
+          books={foundBookData}
+          authors={foundAuthorData}
+        />
+      )} */}
     </div>
   );
 };
