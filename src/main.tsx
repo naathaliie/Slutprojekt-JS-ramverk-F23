@@ -6,8 +6,9 @@ import "./main.scss";
 import RootPage from "./routes/RootPage/RootPage.tsx";
 import ErrorPage from "./routes/ErrorPage/ErrorPage.tsx";
 import SearchPage from "./routes/SearchPage/SearchPage.tsx";
-import SearchResultPage from "./routes/SearchPage/SearchResultPage/SearchResultPage.tsx";
+import SearchResultPage from "./routes/SearchPage/SearchResultPage/SearchedBookPage.tsx";
 import SearchContextProvider from "./context/SearchContext/SearchContextProvider.tsx";
+import SearchedBookPage from "./routes/SearchPage/SearchResultPage/SearchedBookPage.tsx";
 
 //The router for all the paths
 const router = createBrowserRouter([
@@ -26,8 +27,8 @@ const router = createBrowserRouter([
         children: [],
       },
       {
-        path: "/searchPage/:foundId",
-        element: <SearchResultPage />,
+        path: "/searchPage/book/:foundId",
+        element: <SearchedBookPage />,
       },
     ],
   },

@@ -16,7 +16,7 @@ const SearchPage = () => {
               <li>
                 <Link
                   key={"foundId"}
-                  to={`/searchPage/${book.title}`}
+                  to={`/searchPage/book/${book.title}`}
                   className="link"
                 >
                   📘 {book.title}
