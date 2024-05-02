@@ -1,18 +1,12 @@
-import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import "./SearchBar.scss";
 import axios from "axios";
-import { NavLink, Outlet } from "react-router-dom";
-import { SearchResult, fetchedData } from "../../types/types";
-import SearchResultPage from "../../routes/SearchPage/SearchResultPage/SearchResultPage";
+import { fetchedData } from "../../types/types";
+import { useEffect, useRef, useState } from "react";
 
 const bookAPI = "https://openlibrary.org/search.json?title=";
 const authorAPI = "https://openlibrary.org/search.json?author=";
 
-type SearchBarProps = {
-  setSearchResults: Dispatch<SetStateAction<SearchResult | null>>;
-};
-
-const SearchBar = ({ setSearchResults }: SearchBarProps) => {
+const SearchBar = () => {
   const [inputTerm, setInputTerm] = useState("");
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
@@ -41,7 +35,6 @@ const SearchBar = ({ setSearchResults }: SearchBarProps) => {
         if (!ignore) {
           setFoundBookData(bookData);
           setFoundAuthorData(authorData);
-          setSearchResults({ books: bookData, authors: authorData });
         }
       } catch (error) {
         throw new Error("Blabla not working");

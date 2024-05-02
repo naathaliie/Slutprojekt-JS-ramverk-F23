@@ -1,11 +1,6 @@
-import { SearchResults, fetchedData } from "../../../types/types";
 import "./SearchResultPage.scss";
 
-type SearchResultPageProps = {
-  searchResults: SearchResults | null;
-};
-
-const SearchResultPage = ({ searchResults }: SearchResultPageProps) => {
+const SearchResultPage = () => {
   return (
     <div className="SearchResultPage">
       <div className="foundBooks">
