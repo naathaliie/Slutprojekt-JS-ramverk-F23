@@ -12,13 +12,7 @@ export type fetchedData = {
 
 
 /*****SearchContext*****/
-/* En sökning kommer att innehålla ett object av en author array och en books array*/
-type oneSearch = {
-    authors: [],
-    books: [],
-};
 
-/* En författare */
 export type oneAuthor = {
     already_read_count: number,
     author_alternative_name: string[],
@@ -173,5 +167,15 @@ export type OneBook = {
     type: string;
     want_to_read_count: number;
     _version_: number;
+  };
+
+  export type GlobalSearchState = {
+    authors: oneAuthor[];
+    books: OneBook[];
+  };
+
+  export const initialSearchState: GlobalSearchState = {
+    authors:[],
+    books: [],
   };
   
