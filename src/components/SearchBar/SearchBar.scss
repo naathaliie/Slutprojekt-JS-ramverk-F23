@@ -1,6 +1,12 @@
 .SearchBar{
-    
-    input{
+display: flex;
+flex-direction: column;    
+    .new-search-box{
+      input{
         width: 10rem;
+    }  
+    }
+    .last-search-box{
+        font-size: x-small;
     }
 }

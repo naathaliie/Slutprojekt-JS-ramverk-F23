@@ -6,7 +6,6 @@ import "./main.scss";
 import RootPage from "./routes/RootPage/RootPage.tsx";
 import ErrorPage from "./routes/ErrorPage/ErrorPage.tsx";
 import SearchPage from "./routes/SearchPage/SearchPage.tsx";
-import SearchResultPage from "./routes/SearchPage/SearchResultPage/SearchedBookPage.tsx";
 import SearchContextProvider from "./context/SearchContext/SearchContextProvider.tsx";
 import SearchedBookPage from "./routes/SearchPage/SearchResultPage/SearchedBookPage.tsx";
 
