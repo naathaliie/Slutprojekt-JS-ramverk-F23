@@ -1,5 +1,33 @@
-.SearchPage{
-   display: flex;
-   justify-content: center; 
-   margin-top: 2rem;
+.SearchPage {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 2rem 0rem 2rem;
+  gap: 10rem;
+
+  .found-books {
+    width: 50%;
+
+    h3 {
+      margin: 5px;
+    }
+    ul{
+      list-style: none;
+      margin-bottom: 0.5rem;
+      font-size: smaller;
+    .link {
+      color: black;
+      text-decoration: none;
+      &:hover {
+        font-weight: 450;
+      }
+      &:active {
+        transform: translateX(1px);
+      }
+    }
+   }
+  }
+
+  .found-authors {
+    width: 50%;
+  }
 }

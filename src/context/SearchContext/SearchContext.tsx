@@ -1,10 +1,12 @@
-import { createContext } from "react";
+import { createContext, Dispatch, SetStateAction } from "react";
 import { GlobalSearchState, initialSearchState } from "../../types/types";
 
-const SearchContext = createContext<{
-  state: GlobalSearchState; // den initiala typen
-  dispatch: React.Dispatch<Action>;
-}>({
-  state: initialSearchState, // Det initiala värdet
-  dispatch: () => null, // Standardfunktion som inte gör något
+interface SearchContextType {
+  globalSearchState: GlobalSearchState;
+  setGlobalSearchState: Dispatch<SetStateAction<GlobalSearchState>>;
+}
+
+export const SearchContext = createContext<SearchContextType>({
+  globalSearchState: initialSearchState,
+  setGlobalSearchState: () => {},
 });

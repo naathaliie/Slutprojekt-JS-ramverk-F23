@@ -1,12 +1,15 @@
 import "./SearchBar.scss";
 import axios from "axios";
-import { OneBook, fetchedData, oneAuthor } from "../../types/types";
-import { useEffect, useRef, useState } from "react";
+import { fetchedData } from "../../types/types";
+import { useContext, useEffect, useRef, useState } from "react";
+import { SearchContext } from "../../context/SearchContext/SearchContext";
+import { NavLink } from "react-router-dom";
 
 const bookAPI = "https://openlibrary.org/search.json?title=";
-const authorAPI = "https://openlibrary.org/search.json?author=";
+const authorAPI = "https://openlibrary.org/search/authors.json?q=";
 
 const SearchBar = () => {
+  const { setGlobalSearchState } = useContext(SearchContext);
   const [inputTerm, setInputTerm] = useState("");
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
@@ -35,6 +38,10 @@ const SearchBar = () => {
         if (!ignore) {
           setFoundBookData(bookData);
           setFoundAuthorData(authorData);
+          setGlobalSearchState({
+            authors: authorData.docs,
+            books: bookData.docs,
+          });
         }
       } catch (error) {
         throw new Error("Blabla not working");
@@ -74,7 +81,11 @@ const SearchBar = () => {
         ref={inputRef}
         placeholder="Bok/Författare..."
       />
-      <button onClick={handleClick}>Sök</button>
+      <button onClick={handleClick}>
+        <NavLink key={"searchPage"} to={"/searchPage"}>
+          Sök
+        </NavLink>
+      </button>
     </div>
   );
 };

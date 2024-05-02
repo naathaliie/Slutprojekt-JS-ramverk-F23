@@ -1,16 +1,11 @@
+import { useParams } from "react-router-dom";
 import "./SearchResultPage.scss";
 
 const SearchResultPage = () => {
-  return (
-    <div className="SearchResultPage">
-      <div className="foundBooks">
-        <h2>Hittade böcker</h2>
-      </div>
-      <div className="foundAuthors">
-        <h2>Hittade författare</h2>
-      </div>
-    </div>
-  );
+  const params = useParams<{ foundId: string }>();
+  console.log("useparams", params.foundId);
+
+  return <div className="SearchResultPage">SearchPageResult</div>;
 };
 
 export default SearchResultPage;

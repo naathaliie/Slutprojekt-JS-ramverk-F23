@@ -7,6 +7,7 @@ import RootPage from "./routes/RootPage/RootPage.tsx";
 import ErrorPage from "./routes/ErrorPage/ErrorPage.tsx";
 import SearchPage from "./routes/SearchPage/SearchPage.tsx";
 import SearchResultPage from "./routes/SearchPage/SearchResultPage/SearchResultPage.tsx";
+import SearchContextProvider from "./context/SearchContext/SearchContextProvider.tsx";
 
 //The router for all the paths
 const router = createBrowserRouter([
@@ -22,12 +23,11 @@ const router = createBrowserRouter([
       {
         path: "/searchPage",
         element: <SearchPage />,
-        children: [
-          {
-            path: "/searchPage/searchResult",
-            element: <SearchResultPage />,
-          },
-        ],
+        children: [],
+      },
+      {
+        path: "/searchPage/:foundId",
+        element: <SearchResultPage />,
       },
     ],
   },
@@ -35,6 +35,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <SearchContextProvider>
+      <RouterProvider router={router} />
+    </SearchContextProvider>
   </React.StrictMode>
 );

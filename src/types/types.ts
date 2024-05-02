@@ -1,7 +1,7 @@
 
 /*****SearchBar*****/
 export type fetchedData = {
-  docs: [];
+  docs: (OneBook | oneAuthor)[];
   numFound: number;
   numFoundExact: boolean;
   num_found: number;
@@ -170,12 +170,12 @@ export type OneBook = {
   };
 
   export type GlobalSearchState = {
-    authors: oneAuthor[];
-    books: OneBook[];
+    authors: oneAuthor[],
+    books: OneBook[],
   };
 
   export const initialSearchState: GlobalSearchState = {
-    authors:[],
+  authors: [],
     books: [],
   };
-  
+
