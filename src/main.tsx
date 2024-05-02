@@ -24,8 +24,8 @@ const router = createBrowserRouter([
         element: <SearchPage />,
         children: [
           {
-            path: "/searchPage/test",
-            element: <SearchResultPage books={null} authors={null} />,
+            path: "/searchPage/searchResult",
+            element: <SearchResultPage />,
           },
         ],
       },

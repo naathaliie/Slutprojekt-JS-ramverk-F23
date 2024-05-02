@@ -13,3 +13,11 @@ export type fetchedData = {
   q: string;
   start: number;
 };
+
+export type SearchResults = {
+    books: [],
+    authors: [],
+
+};
+
+
