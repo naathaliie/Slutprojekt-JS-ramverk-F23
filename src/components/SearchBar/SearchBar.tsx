@@ -1,6 +1,6 @@
 import "./SearchBar.scss";
 import axios from "axios";
-import { fetchedData } from "../../types/types";
+import { OneBook, fetchedData, oneAuthor } from "../../types/types";
 import { useEffect, useRef, useState } from "react";
 
 const bookAPI = "https://openlibrary.org/search.json?title=";
