@@ -3,7 +3,7 @@ import axios from "axios";
 import { fetchedData } from "../../types/types";
 import { useContext, useEffect, useRef, useState } from "react";
 import { SearchContext } from "../../context/SearchContext/SearchContext";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const bookAPI = "https://openlibrary.org/search.json?title=";
 const authorAPI = "https://openlibrary.org/search/authors.json?q=";
@@ -74,18 +74,25 @@ const SearchBar = () => {
 
   return (
     <div className="SearchBar">
-      <input
-        type="text"
-        value={inputTerm}
-        onChange={handleChange}
-        ref={inputRef}
-        placeholder="Bok/Författare..."
-      />
-      <button onClick={handleClick}>
-        <NavLink key={"searchPage"} to={"/searchPage"}>
-          Sök
-        </NavLink>
-      </button>
+      <div className="new-search-box">
+        <input
+          type="text"
+          value={inputTerm}
+          onChange={handleChange}
+          ref={inputRef}
+          placeholder="Bok/Författare..."
+        />
+        <button onClick={handleClick}>
+          <NavLink key={"searchPage"} to={"/searchPage"}>
+            Sök
+          </NavLink>
+        </button>
+      </div>
+      <div className="last-search-box">
+        <Link key={"lastSearch"} to={"/searchPage"}>
+          Senaste sökningen
+        </Link>
+      </div>
     </div>
   );
 };
