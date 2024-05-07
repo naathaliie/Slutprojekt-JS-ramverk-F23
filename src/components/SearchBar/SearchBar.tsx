@@ -31,7 +31,7 @@ const SearchBar = () => {
     let ignore = false;
 
     const fetchData = async () => {
-      console.log("searchTerm ändrades, du sökte på = ", searchTerm);
+      /*  console.log("searchTerm ändrades, du sökte på = ", searchTerm); */
 
       try {
         const authorResponse = await axios.get(
@@ -81,9 +81,9 @@ const SearchBar = () => {
     inputRef.current?.focus();
   };
 
-  foundBookData ? console.log("sliceData = ", searchResult.books) : "";
+  /*   foundBookData ? console.log("sliceData = ", searchResult.books) : "";
   foundBookData ? console.log("bookData = ", foundBookData) : "";
-  foundAuthorData ? console.log("authorData = ", foundAuthorData) : "";
+  foundAuthorData ? console.log("authorData = ", foundAuthorData) : ""; */
 
   return (
     <div className="SearchBar">

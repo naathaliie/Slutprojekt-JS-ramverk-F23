@@ -46,9 +46,9 @@ export const initialSearchState: GlobalSearchState = {
 };
 
 export type GlobalMyPageState = {
-  myFavourites: {
-    favouriteBooks: OneBook[];
-    favouriteAuthors: oneAuthor[];
+  myFavorites: {
+    favoriteBooks: OneBook[];
+    favoriteAuthors: oneAuthor[];
   };
   myReadBooksInfo: OneReadBook[];
 };

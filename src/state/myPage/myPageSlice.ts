@@ -1,10 +1,10 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { GlobalMyPageState} from "../../types/types";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { GlobalMyPageState, OneBook, oneAuthor} from "../../types/types";
 
 export const initialMyPageState: GlobalMyPageState = {
-  myFavourites: {
-    favouriteBooks: [],
-    favouriteAuthors: [],
+  myFavorites: {
+    favoriteBooks: [],
+    favoriteAuthors: [],
   },
   myReadBooksInfo: [],
 };
@@ -12,7 +12,12 @@ export const initialMyPageState: GlobalMyPageState = {
 const myPageSlice = createSlice({
     name: "myPageSlice",
     initialState: initialMyPageState,
-    reducers:{},
+    reducers:{
+        addFavoritBook: (state, action: PayloadAction<OneBook[]>) => {
+            state.myFavorites.favoriteBooks = action.payload;
+        }
+    },
 });
 
+export const {addFavoritBook} = myPageSlice.actions;
 export default myPageSlice.reducer;
