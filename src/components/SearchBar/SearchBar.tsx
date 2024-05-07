@@ -4,6 +4,8 @@ import { fetchedData } from "../../types/types";
 import { useContext, useEffect, useRef, useState } from "react";
 import { SearchContext } from "../../context/SearchContext/SearchContext";
 import { Link, NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { RootState } from "../../state/store";
 
 const bookAPI = "https://openlibrary.org/search.json?title=";
 const authorAPI = "https://openlibrary.org/search/authors.json?q=";
@@ -17,6 +19,10 @@ const SearchBar = () => {
   const [foundAuthorData, setFoundAuthorData] = useState<fetchedData | null>(
     null
   ); // ÄNDRA
+
+  const searchResult = useSelector((state: RootState) => {
+    state.searchResult;
+  });
 
   useEffect(() => {
     let ignore = false;
