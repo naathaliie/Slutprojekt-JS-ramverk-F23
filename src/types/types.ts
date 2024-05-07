@@ -9,7 +9,7 @@ export type fetchedData = {
   start: number;
 };
 
-
+/*****SearchContext*****/
 
 export type oneAuthor = {
   key: string;
@@ -21,6 +21,7 @@ export type oneAuthor = {
 
 export type OneBook = {
   author_facet: string[];
+  author_name: string,
   author_key: string[];
   cover_edition_key: string;
   cover_i: number;

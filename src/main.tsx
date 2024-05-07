@@ -9,6 +9,7 @@ import SearchPage from "./routes/SearchPage/SearchPage.tsx";
 import SearchedBookPage from "./routes/SearchPage/SearchResultPage/SearchedBookPage.tsx";
 import { Provider } from "react-redux";
 import { store } from "./state/store.ts";
+import SearchedAuthorPage from "./routes/SearchPage/SearchResultPage/SearchedAuthorPage.tsx";
 
 //The router for all the paths
 const router = createBrowserRouter([
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "/searchPage/book/:foundId",
         element: <SearchedBookPage />,
+      },
+      {
+        path: "/searchPage/author/:foundId",
+        element: <SearchedAuthorPage />,
       },
     ],
   },

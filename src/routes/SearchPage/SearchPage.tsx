@@ -19,7 +19,7 @@ const SearchPage = () => {
                   to={`/searchPage/book/${book.title}`}
                   className="link"
                 >
-                  📘 {book.title}
+                  {book.title}
                 </Link>
               </li>
             </ul>
@@ -31,7 +31,9 @@ const SearchPage = () => {
         {searchResult.authors.map((author) => {
           return (
             <ul key={author.key}>
-              <li> {author.name}</li>
+              <Link key={author.key} to={`/searchPage/author/${author.name}`}>
+                <li> {author.name}</li>
+              </Link>
             </ul>
           );
         })}
