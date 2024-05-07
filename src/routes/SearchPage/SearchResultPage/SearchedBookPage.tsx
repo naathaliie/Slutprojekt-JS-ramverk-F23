@@ -36,6 +36,11 @@ const SearchedBookPage = () => {
             <button
               onClick={() => {
                 console.log("Lägg till som favorit");
+
+                const thisBookToAdd = {
+                  ...thisBook,
+                };
+
                 dispatch(addFavoritBook(thisBook));
               }}
             >
