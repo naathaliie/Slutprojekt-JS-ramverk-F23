@@ -51,7 +51,9 @@ const SearchBar = () => {
             authors: authorData.docs,
             books: bookData.docs,
           }); */
-          dispatch(setSearchResult({ authors: authorData, books: bookData }));
+          dispatch(
+            setSearchResult({ authors: authorData.docs, books: bookData.docs })
+          );
         }
       } catch (error) {
         throw new Error("Blabla not working");
@@ -79,6 +81,7 @@ const SearchBar = () => {
     inputRef.current?.focus();
   };
 
+  foundBookData ? console.log("sliceData = ", searchResult.books) : "";
   foundBookData ? console.log("bookData = ", foundBookData) : "";
   foundAuthorData ? console.log("authorData = ", foundAuthorData) : "";
 

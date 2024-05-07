@@ -34,7 +34,7 @@ const SearchPage = () => {
         {searchResult.authors.map((author) => {
           return (
             <ul key={author.key}>
-              <li> {author.author_name}</li>
+              <li> {author.n}</li>
             </ul>
           );
         })}
