@@ -1,12 +1,9 @@
-import { useContext } from "react";
 import "./SearchPage.scss";
-import { SearchContext } from "../../context/SearchContext/SearchContext";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { RootState } from "../../state/store";
 
 const SearchPage = () => {
-  const { globalSearchState } = useContext(SearchContext);
   const searchResult = useSelector((state: RootState) => state.searchResult);
 
   return (

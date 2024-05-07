@@ -1,4 +1,4 @@
-/*****SearchBar*****/
+
 export type fetchedData = {
   docs: (OneBook | oneAuthor)[];
   numFound: number;
@@ -9,7 +9,7 @@ export type fetchedData = {
   start: number;
 };
 
-/*****SearchContext*****/
+
 
 export type oneAuthor = {
   key: string;

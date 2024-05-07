@@ -6,7 +6,6 @@ import "./main.scss";
 import RootPage from "./routes/RootPage/RootPage.tsx";
 import ErrorPage from "./routes/ErrorPage/ErrorPage.tsx";
 import SearchPage from "./routes/SearchPage/SearchPage.tsx";
-import SearchContextProvider from "./context/SearchContext/SearchContextProvider.tsx";
 import SearchedBookPage from "./routes/SearchPage/SearchResultPage/SearchedBookPage.tsx";
 import { Provider } from "react-redux";
 import { store } from "./state/store.ts";
@@ -38,9 +37,7 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <Provider store={store}>
     <React.StrictMode>
-      <SearchContextProvider>
-        <RouterProvider router={router} />
-      </SearchContextProvider>
+      <RouterProvider router={router} />
     </React.StrictMode>
   </Provider>
 );

@@ -2,7 +2,6 @@ import "./SearchBar.scss";
 import axios from "axios";
 import { fetchedData } from "../../types/types";
 import { useContext, useEffect, useRef, useState } from "react";
-import { SearchContext } from "../../context/SearchContext/SearchContext";
 import { Link, NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../state/store";
@@ -12,7 +11,6 @@ const bookAPI = "https://openlibrary.org/search.json?title=";
 const authorAPI = "https://openlibrary.org/search/authors.json?q=";
 
 const SearchBar = () => {
-  const { setGlobalSearchState } = useContext(SearchContext);
   const [inputTerm, setInputTerm] = useState("");
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
