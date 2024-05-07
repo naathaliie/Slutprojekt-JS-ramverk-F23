@@ -4,8 +4,9 @@ import { fetchedData } from "../../types/types";
 import { useContext, useEffect, useRef, useState } from "react";
 import { SearchContext } from "../../context/SearchContext/SearchContext";
 import { Link, NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../state/store";
+import { setSearchResult } from "../../state/searchResults/searchResultsSlice";
 
 const bookAPI = "https://openlibrary.org/search.json?title=";
 const authorAPI = "https://openlibrary.org/search/authors.json?q=";
@@ -20,9 +21,11 @@ const SearchBar = () => {
     null
   ); // ÄNDRA
 
-  const searchResult = useSelector((state: RootState) => {
-    state.searchResult;
-  });
+  //För att få tillgång till globalstate-redux. Behövs inte här?
+  const searchResult = useSelector((state: RootState) => state.searchResult);
+
+  //För att få tillgång till ALLA!? reducers
+  const dispatch = useDispatch();
 
   useEffect(() => {
     let ignore = false;
@@ -44,10 +47,11 @@ const SearchBar = () => {
         if (!ignore) {
           setFoundBookData(bookData);
           setFoundAuthorData(authorData);
-          setGlobalSearchState({
+          /* setGlobalSearchState({
             authors: authorData.docs,
             books: bookData.docs,
-          });
+          }); */
+          dispatch(setSearchResult({ authors: authorData, books: bookData }));
         }
       } catch (error) {
         throw new Error("Blabla not working");
