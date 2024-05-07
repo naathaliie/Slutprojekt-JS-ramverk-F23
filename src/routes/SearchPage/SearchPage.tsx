@@ -4,7 +4,9 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../state/store";
 
 const SearchPage = () => {
-  const searchResult = useSelector((state: RootState) => state.searchResult);
+  const searchResult = useSelector(
+    (state: RootState) => state.searchResultStore
+  );
 
   return (
     <div className="SearchPage">

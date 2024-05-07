@@ -1,7 +1,7 @@
 import "./SearchBar.scss";
 import axios from "axios";
 import { fetchedData } from "../../types/types";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../state/store";
@@ -20,7 +20,9 @@ const SearchBar = () => {
   ); // ÄNDRA
 
   //För att få tillgång till globalstate-redux. Behövs inte här?
-  const searchResult = useSelector((state: RootState) => state.searchResult);
+  const searchResult = useSelector(
+    (state: RootState) => state.searchResultStore
+  );
 
   //För att få tillgång till ALLA!? reducers
   const dispatch = useDispatch();

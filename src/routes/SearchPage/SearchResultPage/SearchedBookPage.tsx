@@ -6,7 +6,7 @@ import { OneBook } from "../../../types/types";
 
 const SearchedBookPage = () => {
   const searchresult = useSelector(
-    (state: RootState) => state.searchResult.books
+    (state: RootState) => state.searchResultStore.books
   );
   const params = useParams<{ foundId: string }>();
   console.log("useparams", params.foundId);
@@ -25,6 +25,7 @@ const SearchedBookPage = () => {
           <div>
             <h3>Titel: {book.title}</h3>
             <h6>Författare: {book.author_name}</h6>
+            <button>Spara som favorit </button>
           </div>
         );
       })}

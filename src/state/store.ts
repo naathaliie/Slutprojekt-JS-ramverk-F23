@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import searchResultReducer from "./searchResults/searchResultsSlice";
+import myPageReducer from "./myPage/myPageSlice";
 
 export const store = configureStore({
     reducer:{
-        searchResult: searchResultReducer,
+        searchResultStore: searchResultReducer,
+        myPageStore: myPageReducer,
     },
 });
 

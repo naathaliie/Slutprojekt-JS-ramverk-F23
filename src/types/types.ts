@@ -44,3 +44,19 @@ export const initialSearchState: GlobalSearchState = {
   authors: [],
   books: [],
 };
+
+export type GlobalMyPageState = {
+  myFavourites: {
+    favouriteBooks: OneBook[];
+    favouriteAuthors: oneAuthor[];
+  };
+  myReadBooksInfo: OneReadBook[];
+};
+
+export type OneReadBook = {
+  title: string;
+  pages: number;
+  likes: number /* ?!?!?!?!? */;
+  review: string;
+};
+
