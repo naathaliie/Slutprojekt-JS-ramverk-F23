@@ -8,6 +8,8 @@ import ErrorPage from "./routes/ErrorPage/ErrorPage.tsx";
 import SearchPage from "./routes/SearchPage/SearchPage.tsx";
 import SearchContextProvider from "./context/SearchContext/SearchContextProvider.tsx";
 import SearchedBookPage from "./routes/SearchPage/SearchResultPage/SearchedBookPage.tsx";
+import { Provider } from "react-redux";
+import { store } from "./state/store.ts";
 
 //The router for all the paths
 const router = createBrowserRouter([
@@ -34,9 +36,11 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <SearchContextProvider>
-      <RouterProvider router={router} />
-    </SearchContextProvider>
-  </React.StrictMode>
+  <Provider store={store}>
+    <React.StrictMode>
+      <SearchContextProvider>
+        <RouterProvider router={router} />
+      </SearchContextProvider>
+    </React.StrictMode>
+  </Provider>
 );
