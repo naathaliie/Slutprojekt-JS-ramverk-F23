@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../state/store";
 import { OneBook } from "../../../types/types";
 import { addFavoritBook } from "../../../state/myPage/myPageSlice";
+import MyFavoritPage from "../../MyFavoritPage/MyFavoritPage";
 
 const SearchedBookPage = () => {
   const searchresult = useSelector(
@@ -22,33 +23,27 @@ const SearchedBookPage = () => {
     return params.foundId === book.title;
   });
 
-  /*   console.log("thisBook ger mig = ", thisBook); */
+  console.log("thisBook ger mig = ", thisBook);
 
   console.log("Mina favorit böcker", myPageStore.favoriteBooks);
 
   return (
     <div className="SearchedBookPage">
-      {thisBook.map((book) => {
-        return (
-          <div key={book.key}>
-            <h3>Titel: {book.title}</h3>
-            <h6>Författare: {book.author_name}</h6>
-            <button
-              onClick={() => {
-                console.log("Lägg till som favorit");
+      <div key={thisBook[0].key}>
+        <h3>Titel: {thisBook[0].title}</h3>
+        <h6>Författare: {thisBook[0].author_name}</h6>
+        <button
+          onClick={() => {
+            console.log("Lägg till som favorit");
 
-                const thisBookToAdd = {
-                  ...thisBook,
-                };
+            dispatch(addFavoritBook(thisBook));
+          }}
+        >
+          Spara som favorit
+        </button>
+      </div>
 
-                dispatch(addFavoritBook(thisBook));
-              }}
-            >
-              Spara som favorit{" "}
-            </button>
-          </div>
-        );
-      })}
+      <MyFavoritPage />
     </div>
   );
 };
