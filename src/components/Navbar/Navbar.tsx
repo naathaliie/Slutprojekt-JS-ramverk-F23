@@ -1,8 +1,18 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import "./Navbar.scss";
 import SearchBar from "../SearchBar/SearchBar";
+import { Menu, MenuItem } from "@mui/material";
+import { useState } from "react";
 
 const Navbar = () => {
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   return (
     <>
       <div className="NavBar">
@@ -17,9 +27,24 @@ const Navbar = () => {
         </div>
 
         <div className="nav-myPage">
-          <NavLink key={"myPage"} to={"/monsters"} className="myPage">
-            😍
-          </NavLink>
+          <span onClick={handleClick}>😍</span>
+          <Menu
+            id="basic-menu"
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            MenuListProps={{
+              "aria-labelledby": "basic-button",
+            }}
+          >
+            <MenuItem onClick={handleClose}>
+              <Link key={"favorits"} to={"/myPage/myFavorits"}>
+                Mina favoriter
+              </Link>
+            </MenuItem>
+            <MenuItem onClick={handleClose}>Mina lästa böcker</MenuItem>
+            <MenuItem onClick={handleClose}>Övrigt</MenuItem>
+          </Menu>
         </div>
       </div>
       <Outlet />

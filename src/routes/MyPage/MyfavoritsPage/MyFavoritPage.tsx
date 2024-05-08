@@ -1,33 +1,60 @@
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../state/store";
-import { removeFavoritBook } from "../../../state/myPage/myPageSlice";
+import {
+  removeFavoritAuthor,
+  removeFavoritBook,
+} from "../../../state/myPage/myPageSlice";
 
 const MyFavoritPage = () => {
   const dispatch = useDispatch();
 
-  const myPageStore = useSelector(
+  const favoritBooks = useSelector(
     (state: RootState) => state.myPageStore.myFavorites.favoriteBooks
   );
 
-  console.log("holabandola = ", myPageStore);
+  const favoritAuthors = useSelector(
+    (state: RootState) => state.myPageStore.myFavorites.favoriteAuthors
+  );
+
+  console.log("holabandola = ", favoritBooks);
   return (
-    <div>
-      <p>Mina favorit böcker</p>
-      {myPageStore.map((b, index) => {
-        return (
-          <div key={index}>
-            <p>{b.title}</p>
-            <button
-              onClick={() => {
-                console.log("Ta bort som favorit");
-                dispatch(removeFavoritBook(b.key));
-              }}
-            >
-              Ta bort
-            </button>
-          </div>
-        );
-      })}
+    <div className="MyFavoritPage">
+      <div className="favorit-books">
+        <p>Mina favorit böcker</p>
+        {favoritBooks.map((b, index) => {
+          return (
+            <div key={index}>
+              <p>{b.title}</p>
+              <button
+                onClick={() => {
+                  console.log("Ta bort som favorit");
+                  dispatch(removeFavoritBook(b.key));
+                }}
+              >
+                Ta bort
+              </button>
+            </div>
+          );
+        })}
+      </div>
+      <div className="favorit-authors">
+        <p>Mina favorit författare</p>
+        {favoritAuthors.map((a, index) => {
+          return (
+            <div key={index}>
+              <p>{a.name}</p>
+              <button
+                onClick={() => {
+                  console.log("Ta bort som favorit");
+                  dispatch(removeFavoritAuthor(a.key));
+                }}
+              >
+                Ta bort
+              </button>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
