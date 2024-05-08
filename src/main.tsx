@@ -11,6 +11,7 @@ import { Provider } from "react-redux";
 import { store } from "./state/store.ts";
 import SearchedAuthorPage from "./routes/SearchPage/SearchResultPage/SearchedAuthorPage.tsx";
 import MyFavoritPage from "./routes/MyPage/MyfavoritsPage/MyFavoritPage.tsx";
+import OtherPage from "./routes/MyPage/OtherPage/OtherPage.tsx";
 
 //The router for all the paths
 const router = createBrowserRouter([
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: "/myPage/myFavorits",
         element: <MyFavoritPage />,
+      },
+      {
+        path: "/myPage/other",
+        element: <OtherPage />,
       },
     ],
   },

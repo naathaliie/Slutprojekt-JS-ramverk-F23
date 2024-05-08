@@ -43,7 +43,11 @@ const Navbar = () => {
               </Link>
             </MenuItem>
             <MenuItem onClick={handleClose}>Mina lästa böcker</MenuItem>
-            <MenuItem onClick={handleClose}>Övrigt</MenuItem>
+            <MenuItem onClick={handleClose}>
+              <Link key={"other"} to={"/myPage/other"}>
+                Övrigt
+              </Link>
+            </MenuItem>
           </Menu>
         </div>
       </div>
