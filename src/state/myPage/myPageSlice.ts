@@ -14,7 +14,7 @@ const myPageSlice = createSlice({
     initialState: initialMyPageState,
     reducers:{
         addFavoritBook: (state, action: PayloadAction<OneBook[]>) => {
-            state.myFavorites.favoriteBooks.push(action.payload);
+            state.myFavorites.favoriteBooks.push(...action.payload);
         },
         removeFavoritBook: (state, action: PayloadAction<string>)=> {
             state.myFavorites.favoriteBooks = state.myFavorites.favoriteBooks.filter((book)=>{return book.key !== action.payload});
