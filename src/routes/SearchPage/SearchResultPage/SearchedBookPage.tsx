@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../state/store";
 import { OneBook } from "../../../types/types";
 import { addFavoritBook } from "../../../state/myPage/myPageSlice";
-import MyFavoritPage from "../../MyFavoritPage/MyFavoritPage";
+import MyFavoritPage from "../../MyPage/MyfavoritsPage/MyFavoritPage";
 
 const SearchedBookPage = () => {
   const searchresult = useSelector(

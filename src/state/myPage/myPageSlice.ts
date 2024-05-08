@@ -22,5 +22,5 @@ const myPageSlice = createSlice({
     },
 });
 
-export const {addFavoritBook} = myPageSlice.actions;
+export const {addFavoritBook, removeFavoritBook} = myPageSlice.actions;
 export default myPageSlice.reducer;
