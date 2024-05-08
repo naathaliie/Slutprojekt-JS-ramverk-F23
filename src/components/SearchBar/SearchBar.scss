@@ -1,12 +1,20 @@
 .SearchBar{
 display: flex;
-flex-direction: column;    
-    .new-search-box{
-      input{
-        width: 10rem;
-    }  
+   
+    .input-box{
+      
     }
-    .last-search-box{
-        font-size: x-small;
+
+    .MuiInputBase-input {
+        font-size: 9px; // Justera storleken på det som skrivs i input
+      }
+    
+      .MuiFormLabel-root {
+        font-size: 10px; // Justera storleken på labeln
+      }
+    
+    .input-btn{
+        align-self: center;
+        margin-left: 3px;
     }
 }

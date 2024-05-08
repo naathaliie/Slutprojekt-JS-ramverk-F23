@@ -6,6 +6,7 @@ import { Link, NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../state/store";
 import { setSearchResult } from "../../state/searchResults/searchResultsSlice";
+import { Box, TextField } from "@mui/material";
 
 const bookAPI = "https://openlibrary.org/search.json?title=";
 const authorAPI = "https://openlibrary.org/search/authors.json?q=";
@@ -47,10 +48,6 @@ const SearchBar = () => {
         if (!ignore) {
           setFoundBookData(bookData);
           setFoundAuthorData(authorData);
-          /* setGlobalSearchState({
-            authors: authorData.docs,
-            books: bookData.docs,
-          }); */
           dispatch(
             setSearchResult({ authors: authorData.docs, books: bookData.docs })
           );
@@ -79,6 +76,7 @@ const SearchBar = () => {
     setSearchTerm(inputTerm.trim().toLocaleLowerCase());
     setInputTerm("");
     inputRef.current?.focus();
+    console.log("du klickade på den nya knappen och du skrev ", inputTerm);
   };
 
   /*   foundBookData ? console.log("sliceData = ", searchResult.books) : "";
@@ -87,27 +85,44 @@ const SearchBar = () => {
 
   return (
     <div className="SearchBar">
-      <div className="new-search-box">
-        <input
-          type="text"
-          value={inputTerm}
-          onChange={handleChange}
-          ref={inputRef}
-          placeholder="Bok/Författare..."
-        />
+      <div className="input-box">
+        <Box
+          component="form"
+          sx={{
+            "& > :not(style)": { width: "18ch" },
+          }}
+          noValidate
+          autoComplete="off"
+        >
+          <TextField
+            placeholder="Sök på en bok eller författare"
+            id="outlined-basic"
+            label="sök"
+            variant="outlined"
+            size="small"
+            value={inputTerm}
+            onChange={handleChange}
+            inputRef={inputRef}
+          />
+        </Box>
+      </div>
+      <div className="input-btn">
         <button onClick={handleClick}>
           <NavLink key={"searchPage"} to={"/searchPage"}>
             Sök
           </NavLink>
         </button>
       </div>
-      <div className="last-search-box">
-        <Link key={"lastSearch"} to={"/searchPage"}>
-          Senaste sökningen
-        </Link>
-      </div>
     </div>
   );
 };
 
 export default SearchBar;
+
+//senaste sökningen
+
+/* <div className="last-search-box">
+        <Link key={"lastSearch"} to={"/searchPage"}>
+          Senaste sökningen
+        </Link>
+      </div> */
