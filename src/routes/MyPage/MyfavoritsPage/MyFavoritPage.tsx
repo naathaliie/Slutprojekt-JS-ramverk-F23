@@ -31,7 +31,7 @@ const MyFavoritPage = () => {
                   dispatch(removeFavoritBook(b.key));
                 }}
               >
-                Ta bort
+                Ta bort favorit
               </button>
             </div>
           );

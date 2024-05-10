@@ -13,7 +13,7 @@ const myPageSlice = createSlice({
     name: "myPageSlice",
     initialState: initialMyPageState,
     reducers:{
-        addFavoritBook: (state, action: PayloadAction<OneBook[]>) => {
+        addFavoritBook: (state, action: PayloadAction<OneBook>) => {
             state.myFavorites.favoriteBooks.push(...action.payload);
         },
         removeFavoritBook: (state, action: PayloadAction<string>)=> {

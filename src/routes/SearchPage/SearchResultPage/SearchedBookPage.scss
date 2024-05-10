@@ -1,19 +1,23 @@
-.SearchedBookPage{
-    border: red 2px solid;
-    width: 100%;
-    min-height: 80vh;
-    display: flex;
-    
-    padding: 1rem 10rem 0rem 10rem;
-    
-    .foundBooks{
-        border: red 2px solid;
+.SearchedBookPage {
+  /* border: rgb(0, 4, 255) 2px solid; */
+  width: 100vw;
+  min-height: 80vh;
+  display: flex;
+  padding: 1rem 10rem 1rem 10rem;
+  gap: 2rem;
 
+  .book-img {
+    width: auto;
+    height: auto;
+  /*   border: rgb(60, 255, 0) 2px solid; */
+  }
+  .book-info {
+   /*  border: rgb(255, 0, 217) 2px solid; */
+  }
+
+  .add-to-favorits {
+    span {
+      font-size: 2rem;
     }
-
-    .foundAuthors{
-        border: red 2px solid;
-
-    }
-
+  }
 }

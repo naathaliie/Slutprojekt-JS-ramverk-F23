@@ -32,6 +32,8 @@ export type OneBook = {
   isbn: string[];
   person: string[];
   title: string;
+  oclc: string[];
+  id_goodreads: string[];
   
 };
 

@@ -32,37 +32,38 @@ const SearchedBookPage = () => {
 
   return (
     <div className="SearchedBookPage">
-      <div className="book-img">bild</div>
-      <div className="book-info">
-        <div key={thisBook[0].key}>
-          <h3>Titel: {thisBook[0].title}</h3>
-          <h6>Författare: {thisBook[0].author_name}</h6>
-
-          {myPageStore.favoriteBooks.find((book) => {
-            return book.key === thisBook[0].key;
-          }) ? (
-            <span
-              onClick={() => {
-                console.log("Lägg till som favorit");
-                dispatch(removeFavoritBook(thisBook[0].key));
-              }}
-            >
-              ❤️
-            </span>
-          ) : (
-            <span
-              onClick={() => {
-                console.log("Lägg till som favorit");
-                dispatch(addFavoritBook(thisBook));
-              }}
-            >
-              🤍
-            </span>
-          )}
-        </div>
+      <div className="book-img">
+        <img
+          src={`https://covers.openlibrary.org/b/isbn/${thisBook[0].isbn[0]}-M.jpg`}
+        />
       </div>
-
-      <MyFavoritPage />
+      <div className="book-info" key={thisBook[0].key}>
+        <h3>Titel: {thisBook[0].title}</h3>
+        <h6>Författare: {thisBook[0].author_name}</h6>
+      </div>
+      <div className="add-to-favorits">
+        {myPageStore.favoriteBooks.find((book) => {
+          return book.key === thisBook[0].key;
+        }) ? (
+          <span
+            onClick={() => {
+              console.log("Lägg till som favorit");
+              dispatch(removeFavoritBook(thisBook[0].key));
+            }}
+          >
+            ❤️
+          </span>
+        ) : (
+          <span
+            onClick={() => {
+              console.log("Lägg till som favorit");
+              dispatch(addFavoritBook([thisBook[0]]));
+            }}
+          >
+            🤍
+          </span>
+        )}
+      </div>
     </div>
   );
 };
