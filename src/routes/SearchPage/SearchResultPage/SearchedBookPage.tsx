@@ -29,18 +29,21 @@ const SearchedBookPage = () => {
 
   return (
     <div className="SearchedBookPage">
-      <div key={thisBook[0].key}>
-        <h3>Titel: {thisBook[0].title}</h3>
-        <h6>Författare: {thisBook[0].author_name}</h6>
-        <button
-          onClick={() => {
-            console.log("Lägg till som favorit");
+      <div className="book-img">bild</div>
+      <div className="book-info">
+        <div key={thisBook[0].key}>
+          <h3>Titel: {thisBook[0].title}</h3>
+          <h6>Författare: {thisBook[0].author_name}</h6>
 
-            dispatch(addFavoritBook(thisBook));
-          }}
-        >
-          Spara som favorit
-        </button>
+          <span
+            onClick={() => {
+              console.log("Lägg till som favorit");
+              dispatch(addFavoritBook(thisBook));
+            }}
+          >
+            ❤️
+          </span>
+        </div>
       </div>
 
       <MyFavoritPage />

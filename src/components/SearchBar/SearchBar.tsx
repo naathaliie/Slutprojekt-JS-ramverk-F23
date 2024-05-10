@@ -6,7 +6,16 @@ import { Link, NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../state/store";
 import { setSearchResult } from "../../state/searchResults/searchResultsSlice";
-import { Box, TextField } from "@mui/material";
+import {
+  Box,
+  Button,
+  Divider,
+  IconButton,
+  InputBase,
+  Paper,
+  TextField,
+} from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
 
 const bookAPI = "https://openlibrary.org/search.json?title=";
 const authorAPI = "https://openlibrary.org/search/authors.json?q=";
@@ -104,14 +113,18 @@ const SearchBar = () => {
             onChange={handleChange}
             inputRef={inputRef}
           />
+          <Link key={"lastSearch"} to={"/searchPage"}>
+            <button onClick={handleClick}>
+              <SearchIcon />
+            </button>
+          </Link>
         </Box>
       </div>
-      <div className="input-btn">
-        <button onClick={handleClick}>
-          <NavLink key={"searchPage"} to={"/searchPage"}>
-            Sök
-          </NavLink>
-        </button>
+      <div className="input-btn"></div>
+      <div className="last-search-box">
+        <Link key={"lastSearch"} to={"/searchPage"}>
+          Senaste sökningen
+        </Link>
       </div>
     </div>
   );
@@ -120,9 +133,3 @@ const SearchBar = () => {
 export default SearchBar;
 
 //senaste sökningen
-
-/* <div className="last-search-box">
-        <Link key={"lastSearch"} to={"/searchPage"}>
-          Senaste sökningen
-        </Link>
-      </div> */

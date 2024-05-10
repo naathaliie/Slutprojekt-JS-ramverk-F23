@@ -1,9 +1,9 @@
 .SearchedBookPage{
     border: red 2px solid;
     width: 100%;
+    min-height: 80vh;
     display: flex;
-    justify-content:space-between;
-    align-items: center;
+    
     padding: 1rem 10rem 0rem 10rem;
     
     .foundBooks{

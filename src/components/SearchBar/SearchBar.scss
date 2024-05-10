@@ -1,5 +1,8 @@
 .SearchBar{
 display: flex;
+flex-direction: column;
+
+
    
     .input-box{
       
@@ -14,7 +17,16 @@ display: flex;
       }
     
     .input-btn{
-        align-self: center;
+        
         margin-left: 3px;
+
+        .NavLink{
+            text-decoration: none;
+            color: rgb(172, 63, 63);
+        }
+    }
+
+    .last-search-box{
+       font-size: smaller;
     }
 }
