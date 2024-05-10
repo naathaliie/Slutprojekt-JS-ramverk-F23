@@ -38,8 +38,16 @@ const SearchedBookPage = () => {
         />
       </div>
       <div className="book-info" key={thisBook[0].key}>
-        <h3>Titel: {thisBook[0].title}</h3>
-        <h6>Författare: {thisBook[0].author_name}</h6>
+        <h3>Titel:</h3>
+        <p>{thisBook[0].title}</p>
+        <h6>Författare:</h6>
+        <p> {thisBook[0].author_name}</p>
+        <h6>Format på bok:</h6>
+        <p>{thisBook[0].format.join(", ")}</p>
+        <h6>Genre:</h6>
+        <p>{thisBook[0].subject.join(", ")}</p>
+        <h6>Språk:</h6>
+        <p>{thisBook[0].language.join(", ")}</p>
       </div>
       <div className="add-to-favorits">
         {myPageStore.favoriteBooks.find((book) => {

@@ -1,0 +1,19 @@
+.SearchedAuthorPage{
+    width: 100vw;
+    min-height: 80vh;
+    display: flex;
+    padding: 1rem 10rem 1rem 10rem;
+    gap: 2rem;
+    .author-img{
+        width: auto;
+        height: auto;
+    }
+    .author-info{
+
+    }
+    .add-to-favorits{
+        span {
+            font-size: 2rem;
+          }
+    }
+}

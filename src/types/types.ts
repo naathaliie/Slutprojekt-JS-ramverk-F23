@@ -17,7 +17,10 @@ export type oneAuthor = {
   top_work: string;
   type: string;
   work_count: number;
-  
+  birth_date?: string;
+  death_date?: string;
+  top_subjects: string[];
+
 };
 
 export type OneBook = {
@@ -32,9 +35,8 @@ export type OneBook = {
   isbn: string[];
   person: string[];
   title: string;
-  oclc: string[];
-  id_goodreads: string[];
-  
+  subject: string[];
+  format: string[];
 };
 
 export type GlobalSearchState = {
