@@ -53,14 +53,17 @@ const SearchedBookPage = () => {
         {myPageStore.favoriteBooks.find((book) => {
           return book.key === thisBook[0].key;
         }) ? (
-          <span
-            onClick={() => {
-              console.log("Lägg till som favorit");
-              dispatch(removeFavoritBook(thisBook[0].key));
-            }}
-          >
-            ❤️
-          </span>
+          <>
+            <span
+              onClick={() => {
+                console.log("Lägg till som favorit");
+                dispatch(removeFavoritBook(thisBook[0].key));
+              }}
+            >
+              ❤️
+            </span>
+            <p>Sparad i favoriter</p>
+          </>
         ) : (
           <span
             onClick={() => {

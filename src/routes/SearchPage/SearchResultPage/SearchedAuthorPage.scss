@@ -7,6 +7,7 @@
     .author-img{
         width: auto;
         height: auto;
+        background-color: pink;
     }
     .author-info{
 
@@ -14,6 +15,10 @@
     .add-to-favorits{
         span {
             font-size: 2rem;
+          }
+        
+          p{
+            font-size: 10px;
           }
     }
 }

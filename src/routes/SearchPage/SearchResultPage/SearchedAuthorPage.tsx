@@ -31,7 +31,9 @@ const SearchedAuthorPage = () => {
 
   return (
     <div className="SearchedAuthorPage">
-      <div className="author-img"></div>
+      <div className="author-img">
+        <p>här ska det vara en bild</p>
+      </div>
       <div className="author-info" key={thisAuthor[0].key}>
         <h3>Namn: </h3>
         <p>{thisAuthor[0].name}</p>
@@ -54,10 +56,12 @@ const SearchedAuthorPage = () => {
         ) : (
           <h6>Död: -</h6>
         )}
-        <div className="add-to-favorits">
-          {myPageStore.favoriteAuthors.find((author) => {
-            return author.key === thisAuthor[0].key;
-          }) ? (
+      </div>
+      <div className="add-to-favorits">
+        {myPageStore.favoriteAuthors.find((author) => {
+          return author.key === thisAuthor[0].key;
+        }) ? (
+          <>
             <span
               onClick={() => {
                 console.log("Lägg till som favorit");
@@ -66,17 +70,18 @@ const SearchedAuthorPage = () => {
             >
               ❤️
             </span>
-          ) : (
-            <span
-              onClick={() => {
-                console.log("Lägg till som favorit");
-                dispatch(addFavoritAuthor([thisAuthor[0]]));
-              }}
-            >
-              🤍
-            </span>
-          )}
-        </div>
+            <p>Sparad i favoriter</p>
+          </>
+        ) : (
+          <span
+            onClick={() => {
+              console.log("Lägg till som favorit");
+              dispatch(addFavoritAuthor([thisAuthor[0]]));
+            }}
+          >
+            🤍
+          </span>
+        )}
       </div>
     </div>
   );
