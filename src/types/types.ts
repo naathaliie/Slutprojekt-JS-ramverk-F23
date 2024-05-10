@@ -17,6 +17,7 @@ export type oneAuthor = {
   top_work: string;
   type: string;
   work_count: number;
+  
 };
 
 export type OneBook = {
@@ -31,6 +32,7 @@ export type OneBook = {
   isbn: string[];
   person: string[];
   title: string;
+  
 };
 
 export type GlobalSearchState = {

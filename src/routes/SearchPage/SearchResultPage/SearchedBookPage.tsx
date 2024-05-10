@@ -3,7 +3,10 @@ import "./SearchedBookPage.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../state/store";
 import { OneBook } from "../../../types/types";
-import { addFavoritBook } from "../../../state/myPage/myPageSlice";
+import {
+  addFavoritBook,
+  removeFavoritBook,
+} from "../../../state/myPage/myPageSlice";
 import MyFavoritPage from "../../MyPage/MyfavoritsPage/MyFavoritPage";
 
 const SearchedBookPage = () => {
@@ -35,14 +38,27 @@ const SearchedBookPage = () => {
           <h3>Titel: {thisBook[0].title}</h3>
           <h6>Författare: {thisBook[0].author_name}</h6>
 
-          <span
-            onClick={() => {
-              console.log("Lägg till som favorit");
-              dispatch(addFavoritBook(thisBook));
-            }}
-          >
-            ❤️
-          </span>
+          {myPageStore.favoriteBooks.find((book) => {
+            return book.key === thisBook[0].key;
+          }) ? (
+            <span
+              onClick={() => {
+                console.log("Lägg till som favorit");
+                dispatch(removeFavoritBook(thisBook[0].key));
+              }}
+            >
+              ❤️
+            </span>
+          ) : (
+            <span
+              onClick={() => {
+                console.log("Lägg till som favorit");
+                dispatch(addFavoritBook(thisBook));
+              }}
+            >
+              🤍
+            </span>
+          )}
         </div>
       </div>
 
