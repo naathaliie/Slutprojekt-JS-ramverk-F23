@@ -45,6 +45,11 @@ const router = createBrowserRouter([
       {
         path: "/myPage/myReadBooks",
         element: <MyReadBooksPage />,
+        children: [
+          {
+            path: "/myPage/myReadBooks/addBook",
+          },
+        ],
       },
       {
         path: "/myPage/other",
