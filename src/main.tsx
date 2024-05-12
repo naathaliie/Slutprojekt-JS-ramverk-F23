@@ -13,7 +13,6 @@ import SearchedAuthorPage from "./routes/SearchPage/SearchResultPage/SearchedAut
 import MyFavoritPage from "./routes/MyPage/MyfavoritsPage/MyFavoritPage.tsx";
 import OtherPage from "./routes/MyPage/OtherPage/OtherPage.tsx";
 import MyReadBooksPage from "./routes/MyPage/MyReadBooksPage/MyReadBooksPage.tsx";
-
 //The router for all the paths
 const router = createBrowserRouter([
   {
