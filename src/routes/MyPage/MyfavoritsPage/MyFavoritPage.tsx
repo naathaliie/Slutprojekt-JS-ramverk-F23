@@ -1,3 +1,4 @@
+import "./MyFavoritPage.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../state/store";
 import {
