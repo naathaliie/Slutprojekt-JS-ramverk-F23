@@ -1,11 +1,12 @@
 .SearchedBookPage {
-  /* border: rgb(0, 4, 255) 2px solid; */
-  width: 100vw;
+  max-width: 90vw;
+  width: 90vw;
   min-height: 80vh;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  margin: 1rem 10rem 1rem 10rem;
   gap: 2rem;
-  padding: 1rem 10rem 1rem 10rem;
+  border: solid black 2px;
   
 
   .book-img {

@@ -1,9 +1,12 @@
 .SearchedAuthorPage{
-    width: 100vw;
-    min-height: 80vh;
-    display: flex;
-    padding: 1rem 10rem 1rem 10rem;
-    gap: 2rem;
+  max-width: 90vw;
+  width: 90vw;
+  min-height: 80vh;
+  display: flex;
+  justify-content: space-around;
+  margin: 1rem 10rem 1rem 10rem;
+  gap: 2rem;
+  border: solid black 2px;
     .author-img{
         width: auto;
         height: auto;

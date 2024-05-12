@@ -1,8 +1,13 @@
 @import "../../scss/variables/fonts.scss";
 @import "../../scss/variables/colors.scss";
 
-.HomePage{
-    color: $color-blue;
-    font-family: $font-primary-montserrat;
-    border: solid black 2px;
+.HomePage {
+  color: $color-blue;
+  font-family: $font-primary-montserrat;
+  width: 90vw;
+  min-height: 80vh;
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 10rem 1rem 10rem;
+  border: solid black 2px;
 }

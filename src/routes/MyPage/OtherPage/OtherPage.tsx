@@ -1,3 +1,5 @@
+import "./OtherPage.scss";
+
 const OtherPage = () => {
   return (
     <div className="OtherPage">

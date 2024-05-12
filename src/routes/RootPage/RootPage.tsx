@@ -3,7 +3,7 @@ import Navbar from "../../components/Navbar/Navbar";
 
 const RootPage = () => {
   return (
-    <div>
+    <div className="Root-page">
       <Navbar />
     </div>
   );
