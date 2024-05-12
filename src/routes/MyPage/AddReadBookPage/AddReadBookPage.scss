@@ -1,0 +1,15 @@
+.AddReadBookPage {
+  border: 3px solid hotpink;
+  height: 40rem;
+  width: 40rem;
+  position: absolute;
+  top: 50%; /* Placera modalens överkant i mitten av fönstret */
+  left: 50%; /* Placera modalens vänstra kant i mitten av fönstret */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Centrera modalen vertikalt och horisontellt */
+  background-color: hotpink;
+
+ 
+}

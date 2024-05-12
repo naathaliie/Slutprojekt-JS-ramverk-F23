@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import "./MyReadBooksPage.scss";
 import { RootState } from "../../../state/store";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 const MyReadBooksPage = () => {
   const dispatch = useDispatch();
@@ -12,14 +12,14 @@ const MyReadBooksPage = () => {
 
   return (
     <div className="MyReadBooksPage">
-      <button>
-        <Link key={"addReadBook"} to={""}>
-          Lägg till bok
-        </Link>
-      </button>
+      <Link key={"addReadBook"} to={"/myPage/myReadBooks/addBook"}>
+        <button> Lägg till bok</button>
+      </Link>
+
       <div className="read-books-box">
         <h3>Mina lästa böcker</h3>
       </div>
+      <Outlet />
     </div>
   );
 };
