@@ -12,6 +12,7 @@ import { store } from "./state/store.ts";
 import SearchedAuthorPage from "./routes/SearchPage/SearchResultPage/SearchedAuthorPage.tsx";
 import MyFavoritPage from "./routes/MyPage/MyfavoritsPage/MyFavoritPage.tsx";
 import OtherPage from "./routes/MyPage/OtherPage/OtherPage.tsx";
+import MyReadBooksPage from "./routes/MyPage/MyReadBooksPage/MyReadBooksPage.tsx";
 
 //The router for all the paths
 const router = createBrowserRouter([
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: "/myPage/myFavorits",
         element: <MyFavoritPage />,
+      },
+      {
+        path: "/myPage/myReadBooks",
+        element: <MyReadBooksPage />,
       },
       {
         path: "/myPage/other",

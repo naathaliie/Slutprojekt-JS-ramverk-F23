@@ -16,8 +16,6 @@ const MyFavoritPage = () => {
   const favoritAuthors = useSelector(
     (state: RootState) => state.myPageStore.myFavorites.favoriteAuthors
   );
-
-  console.log("holabandola = ", favoritBooks);
   return (
     <div className="MyFavoritPage">
       <div className="favorit-books">

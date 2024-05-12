@@ -42,7 +42,11 @@ const Navbar = () => {
                 Mina favoriter
               </Link>
             </MenuItem>
-            <MenuItem onClick={handleClose}>Mina lästa böcker</MenuItem>
+            <MenuItem onClick={handleClose}>
+              <Link key={"readBooks"} to={"/myPage/myReadBooks"}>
+                Mina lästa böcker
+              </Link>
+            </MenuItem>
             <MenuItem onClick={handleClose}>
               <Link key={"other"} to={"/myPage/other"}>
                 Övrigt
