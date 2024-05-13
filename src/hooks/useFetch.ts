@@ -1,34 +1,60 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { fetchedData } from "../types/types";
+import { useDispatch } from "react-redux";
+import { setSearchResult } from "../state/searchResults/searchResultsSlice";
 
-export const useFetch = (API:string) => {
-//Save and set the Data given from fetchData()
-const [foundData, setFoundData] = useState();
+const bookAPI = "https://openlibrary.org/search.json?title=";
+const authorAPI = "https://openlibrary.org/search/authors.json?q=";
 
 
-  useEffect(() => {
-    let ignore = false; // Variable to handle component unmounting
-    /* console.log("Fetching data..."); */
+export const useFetch = (searchTerm:string) => {
+  const [foundBookData, setFoundBookData] = useState<fetchedData | null>(null);
+  const [foundAuthorData, setFoundAuthorData] = useState<fetchedData | null>(
+    null
+  ); // ÄNDRA
 
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(API);
-        const data = response.data;
-        setFoundData(data);
-        /* console.log("data received: ", data); */
-      } catch (error) {
-        throw new Error("Blabla det fungerar inte");
+const dispatch = useDispatch();
+
+useEffect(() => {
+  let ignore = false;
+
+  const fetchData = async () => {
+    /*  console.log("searchTerm ändrades, du sökte på = ", searchTerm); */
+
+    try {
+      const authorResponse = await axios.get(
+        `${authorAPI}${searchTerm}&limit=10`
+      );
+      const authorData = authorResponse.data;
+
+      const bookResponse = await axios.get(
+        `${bookAPI}${searchTerm}&limit=10`
+      );
+      const bookData = bookResponse.data;
+
+      if (!ignore) {
+        setFoundBookData(bookData);
+        setFoundAuthorData(authorData);
+        dispatch(
+          setSearchResult({ authors: authorData.docs, books: bookData.docs })
+        );
       }
-    };
+    } catch (error) {
+      throw new Error("Blabla not working");
+    }
+  };
 
+  if (searchTerm !== "") {
     fetchData();
+  }
 
-    return () => {
-      ignore = true; // Signal that the component has been unmounted.
-    };
-  }, []); //Can be left empty IF useEffect is meant to run only once, for example when fetching from an API once.
+  return () => {
+    ignore = true;
+  };
+}, [searchTerm]);
 
-  return foundData;
+  return ;
 };
 
 
