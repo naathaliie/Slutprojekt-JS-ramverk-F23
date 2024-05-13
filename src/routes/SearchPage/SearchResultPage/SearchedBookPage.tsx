@@ -29,6 +29,7 @@ const SearchedBookPage = () => {
   console.log("thisBook ger mig = ", thisBook);
 
   console.log("Mina favorit böcker", myPageStore.myFavorites.favoriteBooks);
+  console.log("Mina lästa böcker", myPageStore.myReadBooksInfo);
 
   return (
     <div className="SearchedBookPage">
@@ -68,7 +69,17 @@ const SearchedBookPage = () => {
           <span
             onClick={() => {
               console.log("Lägg till som läst");
-              dispatch(addReadBook([thisBook[0]]));
+              dispatch(
+                addReadBook([
+                  {
+                    key: thisBook[0].key,
+                    title: thisBook[0].title,
+                    pages: thisBook[0].number_of_pages_median,
+                    likes: "",
+                    review: "",
+                  },
+                ])
+              );
             }}
           >
             🟩

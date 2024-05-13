@@ -1,14 +1,20 @@
-.MyReadBooksPage{ max-width: 90vw;
-width: 90vw;
-min-height: 80vh;
-display: flex;
-flex-direction: column;
-align-items: center;
-margin: 1rem 10rem 1rem 10rem;
-gap: 2rem;
-border: solid black 2px;
-button{
+.MyReadBooksPage {
+  max-width: 90vw;
+  width: 90vw;
+  min-height: 80vh;
+  display: flex;
+  justify-content: space-between; /* Placerar element på motsatta sidor av container */
+  align-items: flex-start; /* Justerar vertikal placering till toppen */
+  margin: 1rem 10rem 1rem 10rem;
+  gap: 2rem;
+  border: solid black 2px;
+
+  .read-books-box {
+    flex: 1; /* Tar upp så mycket utrymme som möjligt */
+  }
+
+  button {
     width: auto;
     height: 2rem;
-}
+  }
 }

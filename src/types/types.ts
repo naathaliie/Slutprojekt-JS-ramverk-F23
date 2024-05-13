@@ -37,6 +37,7 @@ export type OneBook = {
   title: string;
   subject: string[];
   format: string[];
+  number_of_pages_median: number
 };
 
 export type GlobalSearchState = {
@@ -56,14 +57,14 @@ export type GlobalMyPageState = {
     favoriteBooks: OneBook[];
     favoriteAuthors: oneAuthor[];
   };
-  myReadBooksInfo: OneBook[];
+  myReadBooksInfo: OneReadBook[];
 };
 
 export type OneReadBook = {
   key: string;
   title: string;
   pages: number;
-  likes: number /* ?!?!?!?!? */;
+  likes: "Worst"|"ok"|"Great"|"";
   review: string;
 };
 

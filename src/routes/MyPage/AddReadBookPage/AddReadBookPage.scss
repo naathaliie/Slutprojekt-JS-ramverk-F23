@@ -1,19 +1,32 @@
 .AddReadBookPage {
   border: 3px solid hotpink;
-  height: 40rem;
-  width: 40rem;
-  position: absolute;
-  top: 50%; /* Placera modalens överkant i mitten av fönstret */
-  left: 50%; /* Placera modalens vänstra kant i mitten av fönstret */
-  transform: translate(
-    -50%,
-    -50%
-  ); /* Centrera modalen vertikalt och horisontellt */
+  height: 30rem;
+  width: 20rem;
   background-color: hotpink;
+  
 
-  .input-box {
+  
+.input-box{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr; /* Lika breda kolumner för alla tre element */
     grid-gap: 10px; /* Justera efter behov */
-  }
 }
+
+.removez{
+  width: 10rem;
+  height: 10rem;
+  
+}
+}
+
+
+
+/*
+FÖR ATT PLACERA HELA KOMPONENTEN STATISKT
+position: absolute;
+  top: 50%; // Placera modalens överkant i mitten av fönstret 
+  left: 50%; // Placera modalens vänstra kant i mitten av fönstret 
+  transform: translate(
+    -50%,
+    -50%
+  ); // Centrera modalen vertikalt och horisontellt  */
