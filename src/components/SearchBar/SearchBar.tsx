@@ -1,25 +1,11 @@
 import "./SearchBar.scss";
-import axios from "axios";
-import { fetchedData } from "../../types/types";
-import { useEffect, useRef, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { RootState } from "../../state/store";
-import { setSearchResult } from "../../state/searchResults/searchResultsSlice";
-import {
-  Box,
-  Button,
-  Divider,
-  IconButton,
-  InputBase,
-  Paper,
-  TextField,
-} from "@mui/material";
+import { Box, TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { useFetch } from "../../hooks/useFetch";
-
-const bookAPI = "https://openlibrary.org/search.json?title=";
-const authorAPI = "https://openlibrary.org/search/authors.json?q=";
 
 const SearchBar = () => {
   const [inputTerm, setInputTerm] = useState("");
@@ -89,5 +75,3 @@ const SearchBar = () => {
 };
 
 export default SearchBar;
-
-//senaste sökningen
