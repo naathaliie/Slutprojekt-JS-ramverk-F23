@@ -25,12 +25,15 @@ const myPageSlice = createSlice({
         removeFavoritAuthor: (state, action:PayloadAction<string>) => {
             state.myFavorites.favoriteAuthors = state.myFavorites.favoriteAuthors.filter((author)=>{return author.key !== action.payload})
         }, 
-        addReadBook: (state, action: PayloadAction<OneReadBook[]>) =>{
+        addReadBook: (state, action: PayloadAction<OneBook[]>) =>{
             state.myReadBooksInfo.push(...action.payload);
+        },
+        removeReadBook: (state, action: PayloadAction<string>)=> {
+            state.myReadBooksInfo = state.myFavorites.favoriteBooks.filter((book)=>{return book.key !== action.payload});
         }
         
     },
 });
 
-export const {addFavoritBook, removeFavoritBook, addFavoritAuthor, removeFavoritAuthor} = myPageSlice.actions;
+export const {addFavoritBook, removeFavoritBook, addFavoritAuthor, removeFavoritAuthor, addReadBook, removeReadBook} = myPageSlice.actions;
 export default myPageSlice.reducer;

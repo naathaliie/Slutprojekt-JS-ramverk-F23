@@ -56,10 +56,11 @@ export type GlobalMyPageState = {
     favoriteBooks: OneBook[];
     favoriteAuthors: oneAuthor[];
   };
-  myReadBooksInfo: OneReadBook[];
+  myReadBooksInfo: OneBook[];
 };
 
 export type OneReadBook = {
+  key: string;
   title: string;
   pages: number;
   likes: number /* ?!?!?!?!? */;

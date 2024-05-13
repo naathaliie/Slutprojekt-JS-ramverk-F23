@@ -6,18 +6,29 @@ import { Link, Outlet } from "react-router-dom";
 const MyReadBooksPage = () => {
   const dispatch = useDispatch();
 
-  const favoritBooks = useSelector(
+  const readBooks = useSelector(
     (state: RootState) => state.myPageStore.myReadBooksInfo
   );
 
   return (
     <div className="MyReadBooksPage">
-      <Link key={"addReadBook"} to={"/myPage/myReadBooks/addBook"}>
+      {/* 
         <button> Lägg till bok</button>
-      </Link>
+       */}
 
       <div className="read-books-box">
         <h3>Mina lästa böcker</h3>
+        <ul>
+          {readBooks.map((book) => {
+            return (
+              <li key={book.key}>
+                <Link key={"addReadBook"} to={"/myPage/myReadBooks/addBook"}>
+                  {book.title}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
       </div>
       <Outlet />
     </div>

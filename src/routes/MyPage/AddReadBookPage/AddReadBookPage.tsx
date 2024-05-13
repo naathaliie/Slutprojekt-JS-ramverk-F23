@@ -11,6 +11,7 @@ const AddReadBookPage = () => {
   );
 
   const [formData, setFormData] = useState<OneReadBook>({
+    key: "",
     title: "",
     pages: 0,
     likes: 0,
@@ -32,28 +33,43 @@ const AddReadBookPage = () => {
   return (
     <div className="AddReadBookPage">
       <h1>Lägg till bok</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="titel">
-          Titel
-          <input
-            onChange={handleInputChange}
-            value={formData.title}
-            name="titel"
-            type={"text"}
-            placeholder={"Titel på bok"}
-          />
-        </label>
-        <label htmlFor="pages">
-          Antal sidor{" "}
-          <input
-            onChange={handleInputChange}
-            value={formData.pages}
-            name="pages"
-            type={"number"}
-            placeholder={"Antal sidor"}
-          />
-        </label>
-      </form>
+      <div className="input-box">
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="title">
+            Titel
+            <input
+              id="title"
+              onChange={handleInputChange}
+              value={formData.title}
+              name="title"
+              type={"text"}
+              placeholder={"Titel på bok"}
+            />
+          </label>
+          <label htmlFor="pages">
+            Antal sidor{" "}
+            <input
+              id="pages"
+              onChange={handleInputChange}
+              value={formData.pages}
+              name="pages"
+              type={"number"}
+              placeholder={"Antal sidor"}
+            />
+          </label>
+          <label htmlFor="likes">
+            Likes
+            <input
+              id="likes"
+              onChange={handleInputChange}
+              value={formData.pages}
+              name="likes"
+              type={"text"}
+              placeholder={"Hur bra var boken?"}
+            />
+          </label>
+        </form>
+      </div>
       <div className="btns">
         <Link key={"readBooks"} to={"/myPage/myReadBooks"}>
           <button>stäng</button>

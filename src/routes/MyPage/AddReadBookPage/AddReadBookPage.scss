@@ -10,4 +10,10 @@
     -50%
   ); /* Centrera modalen vertikalt och horisontellt */
   background-color: hotpink;
+
+  .input-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Lika breda kolumner för alla tre element */
+    grid-gap: 10px; /* Justera efter behov */
+  }
 }

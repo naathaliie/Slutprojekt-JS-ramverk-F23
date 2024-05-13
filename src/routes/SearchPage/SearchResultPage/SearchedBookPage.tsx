@@ -5,7 +5,9 @@ import { RootState } from "../../../state/store";
 import { OneBook } from "../../../types/types";
 import {
   addFavoritBook,
+  addReadBook,
   removeFavoritBook,
+  removeReadBook,
 } from "../../../state/myPage/myPageSlice";
 import MyFavoritPage from "../../MyPage/MyfavoritsPage/MyFavoritPage";
 
@@ -13,9 +15,7 @@ const SearchedBookPage = () => {
   const searchresult = useSelector(
     (state: RootState) => state.searchResultStore.books
   );
-  const myPageStore = useSelector(
-    (state: RootState) => state.myPageStore.myFavorites
-  );
+  const myPageStore = useSelector((state: RootState) => state.myPageStore);
   const dispatch = useDispatch();
 
   const params = useParams<{ foundId: string }>();
@@ -28,7 +28,7 @@ const SearchedBookPage = () => {
 
   console.log("thisBook ger mig = ", thisBook);
 
-  console.log("Mina favorit böcker", myPageStore.favoriteBooks);
+  console.log("Mina favorit böcker", myPageStore.myFavorites.favoriteBooks);
 
   return (
     <div className="SearchedBookPage">
@@ -49,8 +49,34 @@ const SearchedBookPage = () => {
         <h6>Språk:</h6>
         <p>{thisBook[0].language.join(", ")}</p>
       </div>
+      <div className="add-to-readBooks">
+        {myPageStore.myReadBooksInfo.find((book) => {
+          return book.key === thisBook[0].key;
+        }) ? (
+          <>
+            <span
+              onClick={() => {
+                console.log("Ta bort som läst");
+                dispatch(removeReadBook(thisBook[0].key));
+              }}
+            >
+              ✅
+            </span>
+            <p>Läst!</p>
+          </>
+        ) : (
+          <span
+            onClick={() => {
+              console.log("Lägg till som läst");
+              dispatch(addReadBook([thisBook[0]]));
+            }}
+          >
+            🟩
+          </span>
+        )}
+      </div>
       <div className="add-to-favorits">
-        {myPageStore.favoriteBooks.find((book) => {
+        {myPageStore.myFavorites.favoriteBooks.find((book) => {
           return book.key === thisBook[0].key;
         }) ? (
           <>
