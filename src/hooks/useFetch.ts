@@ -54,7 +54,7 @@ useEffect(() => {
   };
 }, [searchTerm]);
 
-  return ;
+  return {foundBookData, foundAuthorData};
 };
 
 
