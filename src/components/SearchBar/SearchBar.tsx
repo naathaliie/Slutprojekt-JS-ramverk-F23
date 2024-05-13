@@ -88,9 +88,9 @@ const SearchBar = () => {
     console.log("du klickade på den nya knappen och du skrev ", inputTerm);
   };
 
-  foundBookData ? console.log("sliceData = ", searchResult.books) : "";
+  /*   foundBookData ? console.log("sliceData = ", searchResult.books) : "";
   foundBookData ? console.log("bookData = ", foundBookData) : "";
-  foundAuthorData ? console.log("authorData = ", foundAuthorData) : "";
+  foundAuthorData ? console.log("authorData = ", foundAuthorData) : ""; */
 
   return (
     <div className="SearchBar">

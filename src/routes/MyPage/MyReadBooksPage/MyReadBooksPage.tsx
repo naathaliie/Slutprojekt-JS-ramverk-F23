@@ -22,7 +22,10 @@ const MyReadBooksPage = () => {
           {readBooks.map((book) => {
             return (
               <li key={book.key}>
-                <Link key={"addReadBook"} to={"/myPage/myReadBooks/addBook"}>
+                <Link
+                  key={"addReadBook"}
+                  to={`/myPage/myReadBooks/addBook/${book.title}`}
+                >
                   {book.title}
                 </Link>
               </li>

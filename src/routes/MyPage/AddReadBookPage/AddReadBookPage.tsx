@@ -4,11 +4,15 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../../state/store";
 import { useState } from "react";
 import { OneReadBook } from "../../../types/types";
+import { useParams } from "react-router-dom";
 
 const AddReadBookPage = () => {
   const myReadBooks = useSelector(
     (state: RootState) => state.myPageStore.myReadBooksInfo
   );
+
+  const params = useParams<{ readBook: string }>();
+  console.log("params ger mig, ", params.readBook);
 
   const [formData, setFormData] = useState<OneReadBook>({
     key: "",
