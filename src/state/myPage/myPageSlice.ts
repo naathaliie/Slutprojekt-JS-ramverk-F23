@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { GlobalMyPageState, OneBook, oneAuthor} from "../../types/types";
+import { GlobalMyPageState, OneBook, OneReadBook, oneAuthor} from "../../types/types";
 
 export const initialMyPageState: GlobalMyPageState = {
   myFavorites: {
@@ -25,6 +25,9 @@ const myPageSlice = createSlice({
         removeFavoritAuthor: (state, action:PayloadAction<string>) => {
             state.myFavorites.favoriteAuthors = state.myFavorites.favoriteAuthors.filter((author)=>{return author.key !== action.payload})
         }, 
+        addReadBook: (state, action: PayloadAction<OneReadBook[]>) =>{
+            state.myReadBooksInfo.push(...action.payload);
+        }
         
     },
 });
