@@ -72,6 +72,14 @@ const SearchedBookPage = () => {
         <p>{thisBook[0].language.join(", ")}</p>
         <h4>Genre:</h4>
         <p>{thisBook[0].subject.slice(0, 4).join(", ")}</p>
+        {thisBook[0].number_of_pages_median !== undefined ? (
+          <>
+            <h4>Antal sidor:</h4>
+            <p>{thisBook[0].number_of_pages_median}</p>
+          </>
+        ) : (
+          <h4>Antal sidor: -</h4>
+        )}
       </div>
       <div className="add-to-readBooks">
         {myPageStore.myReadBooksInfo.find((book) => {
@@ -98,7 +106,10 @@ const SearchedBookPage = () => {
                   {
                     key: thisBook[0].key,
                     title: thisBook[0].title,
-                    pages: thisBook[0].number_of_pages_median,
+                    pages:
+                      thisBook[0].number_of_pages_median !== undefined
+                        ? thisBook[0].number_of_pages_median
+                        : 0,
                     likes: "",
                     review: "",
                   },
