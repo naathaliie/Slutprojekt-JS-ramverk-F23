@@ -23,7 +23,7 @@ const Navbar = () => {
 
         <div className="nav-loggo">
           <NavLink key={"home"} to={"/"} className="home">
-            THE LIBRARY
+            Mitt Bibliotek
           </NavLink>
         </div>
 
