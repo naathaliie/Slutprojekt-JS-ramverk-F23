@@ -67,11 +67,13 @@ const SearchBar = () => {
           </Link>
         </Box>
       </div>
-      <div className="last-search-box">
-        <Link key={"lastSearch"} to={"/searchPage"}>
-          Senaste sökningen
-        </Link>
-      </div>
+      {(foundBookData || foundAuthorData) && (
+        <div className="last-search-box">
+          <Link key={"lastSearch"} to={"/searchPage"}>
+            Senaste sökningen
+          </Link>
+        </div>
+      )}
     </div>
   );
 };
