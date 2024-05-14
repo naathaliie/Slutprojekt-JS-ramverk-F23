@@ -9,7 +9,6 @@ import {
   removeFavoritBook,
   removeReadBook,
 } from "../../../../state/myPage/myPageSlice";
-import MyFavoritPage from "../../../MyPage/MyfavoritsPage/MyFavoritPage";
 
 const SearchedBookPage = () => {
   const searchresult = useSelector(

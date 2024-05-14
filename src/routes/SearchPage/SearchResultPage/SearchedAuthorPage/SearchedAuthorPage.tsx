@@ -7,7 +7,6 @@ import {
   addFavoritAuthor,
   removeFavoritAuthor,
 } from "../../../../state/myPage/myPageSlice";
-import MyFavoritPage from "../../../MyPage/MyfavoritsPage/MyFavoritPage";
 
 const SearchedAuthorPage = () => {
   const searchResult = useSelector(
@@ -63,6 +62,7 @@ const SearchedAuthorPage = () => {
         }) ? (
           <>
             <span
+              className="emoji-icon favorit checked"
               onClick={() => {
                 console.log("Lägg till som favorit");
                 dispatch(removeFavoritAuthor(thisAuthor[0].key));
@@ -70,10 +70,10 @@ const SearchedAuthorPage = () => {
             >
               ❤️
             </span>
-            <p>Sparad i favoriter</p>
           </>
         ) : (
           <span
+            className="emoji-icon favorit notChecked"
             onClick={() => {
               console.log("Lägg till som favorit");
               dispatch(addFavoritAuthor([thisAuthor[0]]));
