@@ -8,17 +8,30 @@
   grid-template-columns: 1fr auto 1fr; /* Dela upp navbar i tre kolumner med samma storlek */
   align-items: center;
   margin-top: 5px;
-  padding: 0px 10px 0px 10px;
+  padding: 0px 10px 0px 10px
 }
+  .nav-search{
+    justify-self: start; /* Placera längst till vänster */
+  }
 
-.nav-search {
-  justify-self: start; /* Placera längst till vänster */
-}
+  .nav-loggo {
+    
+    justify-self: center; /* Centrera */
 
-.nav-loggo {
-  justify-self: center; /* Centrera */
-}
+    .home {
+      text-decoration: none;
+      font-size: larger;
+      font-weight: bolder;
+      color: $color-black;
+    }
+  }
 
-.nav-myPage {
-  justify-self: end; /* Placera längst till höger */
-}
+  .nav-myPage {
+    justify-self: end; /* Placera längst till höger */
+    .myPage {
+      text-decoration: none;
+    }
+    span {
+      font-size: 3rem;
+    }
+  }
