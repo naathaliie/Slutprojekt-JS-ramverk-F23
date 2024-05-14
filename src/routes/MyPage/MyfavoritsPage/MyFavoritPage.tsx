@@ -5,6 +5,8 @@ import {
   removeFavoritAuthor,
   removeFavoritBook,
 } from "../../../state/myPage/myPageSlice";
+import MyButton from "../../../components/Button/MyButton";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 const MyFavoritPage = () => {
   const dispatch = useDispatch();
@@ -25,14 +27,13 @@ const MyFavoritPage = () => {
             return (
               <li key={index}>
                 {b.title}
-                <button
-                  onClick={() => {
-                    console.log("Ta bort som favorit");
+                <MyButton
+                  icon={<DeleteIcon sx={{ fontSize: "15px" }} />}
+                  name="aBtn"
+                  onClickFunction={() => {
                     dispatch(removeFavoritBook(b.key));
                   }}
-                >
-                  x
-                </button>
+                />
               </li>
             );
           })}

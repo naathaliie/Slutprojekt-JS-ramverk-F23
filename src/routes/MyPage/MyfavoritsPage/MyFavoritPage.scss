@@ -12,12 +12,7 @@
     gap: 2rem;
     border: solid black 2px;
    
-    .favorit-books{
-
-    }
-    .favorit-authors{
-
-    }
+   
 
     h3 {
         margin: 5px;
@@ -27,16 +22,12 @@
     
         li {
          @include liAndlink-style-mixin();
-         button {
+         .MyButton {
             margin-left: 10px;
             position: relative; /* Lägg till position: relative för att positionera ::after-pseudo-elementet relativt till knappen */
-            background-color: $color-button-red;
-            border: $color-button-dark-red 1px solid;
-            border-radius: 40%;
             &:hover {
               cursor: pointer; /* Sätt pekaren till en hand när den hovras över */
-              background-color: $color-button-dark-red;
-              &::after {
+              &::after { //pop-up infon
                 content: "Ta bort"; /* Lägg till önskad text */
                 position: absolute; /* Absolut positionera texten */
                 top: 50%; /* Placera texten på 50% av knappens höjd */
@@ -44,7 +35,6 @@
                 transform: translateY(-50%); /* Centrera vertikalt */
                 font-size: $font-size-small;
                 padding: 0.5rem; /* Utfyllnad för bättre utseende */
-                border-radius: 5px; /* Avrunda hörnen */
               }
             }
           }

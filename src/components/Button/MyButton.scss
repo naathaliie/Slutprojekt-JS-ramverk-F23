@@ -1,0 +1,17 @@
+@import "../../scss/variables/colors.scss";
+
+.MyButton {
+    width: auto;
+    height: auto;
+    transition: transform 0.1s ease; // Nuvarande transition-effect för transform
+  &:hover {
+    cursor: pointer; /* Sätt pekaren till en hand när den hovras över */
+
+  }
+  &:active {
+    transform: translateY(1px); // Flytta knappen 5 pixlar åt höger när den är aktiv 
+    transition-duration: 0.05s; // Här minskar vi durationen för transition till 0.05s
+
+}
+}
+

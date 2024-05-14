@@ -6,6 +6,7 @@ import { RootState } from "../../state/store";
 import { Box, TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { useFetch } from "../../hooks/useFetch";
+import MyButton from "../Button/MyButton";
 
 const SearchBar = () => {
   const [inputTerm, setInputTerm] = useState("");
@@ -58,9 +59,11 @@ const SearchBar = () => {
             inputRef={inputRef}
           />
           <Link key={"lastSearch"} to={"/searchPage"}>
-            <button className="input-search-btn" onClick={handleClick}>
-              <SearchIcon />
-            </button>
+            <MyButton
+              name="input-search-btn"
+              onClickFunction={handleClick}
+              icon={<SearchIcon />}
+            />
           </Link>
         </Box>
       </div>
