@@ -22,7 +22,7 @@ const Navbar = () => {
         </div>
 
         <div className="nav-loggo">
-          <NavLink key={"home"} to={"/"} className="home">
+          <NavLink key={"home"} to={"/"} className="home-icon">
             Mitt Bibliotek
           </NavLink>
         </div>
@@ -41,17 +41,29 @@ const Navbar = () => {
             }}
           >
             <MenuItem onClick={handleClose}>
-              <Link key={"favorits"} to={"/myPage/myFavorits"}>
+              <Link
+                style={{ color: "hotpink", textDecoration: "none" }}
+                key={"favorits"}
+                to={"/myPage/myFavorits"}
+              >
                 Mina favoriter
               </Link>
             </MenuItem>
             <MenuItem onClick={handleClose}>
-              <Link key={"readBooks"} to={"/myPage/myReadBooks"}>
+              <Link
+                style={{ color: "hotpink", textDecoration: "none" }}
+                key={"readBooks"}
+                to={"/myPage/myReadBooks"}
+              >
                 Mina lästa böcker
               </Link>
             </MenuItem>
             <MenuItem onClick={handleClose}>
-              <Link key={"other"} to={"/myPage/other"}>
+              <Link
+                style={{ color: "hotpink", textDecoration: "none" }}
+                key={"other"}
+                to={"/myPage/other"}
+              >
                 Övrigt
               </Link>
             </MenuItem>
