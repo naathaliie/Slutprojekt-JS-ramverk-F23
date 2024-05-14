@@ -22,41 +22,49 @@ const MyFavoritPage = () => {
     <div className="MyFavoritPage">
       <div className="favorit-books">
         <h3>Mina favorit böcker</h3>
-        <ul>
-          {favoritBooks.map((b, index) => {
-            return (
-              <li key={index}>
-                {b.title}
-                <MyButton
-                  icon={<DeleteIcon sx={{ fontSize: "15px" }} />}
-                  name="aBtn"
-                  onClickFunction={() => {
-                    dispatch(removeFavoritBook(b.key));
-                  }}
-                />
-              </li>
-            );
-          })}
-        </ul>
+        {favoritBooks.length > 0 ? (
+          <ul>
+            {favoritBooks.map((b, index) => {
+              return (
+                <li key={index}>
+                  {b.title}
+                  <MyButton
+                    icon={<DeleteIcon sx={{ fontSize: "15px" }} />}
+                    name="aBtn"
+                    onClickFunction={() => {
+                      dispatch(removeFavoritBook(b.key));
+                    }}
+                  />
+                </li>
+              );
+            })}
+          </ul>
+        ) : (
+          "Du har inte favoritmarkerat någon bok ännu"
+        )}
       </div>
       <div className="favorit-authors">
         <h3>Mina favorit författare</h3>
-        <ul>
-          {favoritAuthors.map((a, index) => {
-            return (
-              <li key={index}>
-                {a.name}
-                <MyButton
-                  icon={<DeleteIcon sx={{ fontSize: "15px" }} />}
-                  name="aBtn"
-                  onClickFunction={() => {
-                    dispatch(removeFavoritAuthor(a.key));
-                  }}
-                />
-              </li>
-            );
-          })}
-        </ul>
+        {favoritAuthors.length > 0 ? (
+          <ul>
+            {favoritAuthors.map((a, index) => {
+              return (
+                <li key={index}>
+                  {a.name}
+                  <MyButton
+                    icon={<DeleteIcon sx={{ fontSize: "15px" }} />}
+                    name="aBtn"
+                    onClickFunction={() => {
+                      dispatch(removeFavoritAuthor(a.key));
+                    }}
+                  />
+                </li>
+              );
+            })}
+          </ul>
+        ) : (
+          "Du har inte favoritmarkerat någon författare ännu"
+        )}
       </div>
     </div>
   );
