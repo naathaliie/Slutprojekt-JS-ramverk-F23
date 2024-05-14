@@ -1,40 +1,31 @@
 @import "../../scss/variables/colors.scss";
 
-.SearchBar{
-display: flex;
-flex-direction: column;
+.SearchBar {
+  display: flex;
+  flex-direction: column;
 
+  .input-box {
+    .input-search-btn {
+      background-color: $color-pink;
+      color: $color-white;
+      border-radius: 20%;
+      margin-left: 5px;
 
-   
-    .input-box{
-      .input-search-btn{
-        background-color: $color-pink;
-        color: $color-white;
-        border-radius: 20%;
-        margin-left: 5px;
-
-        &:hover{
-          background-color: $color-dark-pink;
-        }
+      &:hover {
+        background-color: $color-dark-pink;
       }
     }
+  }
 
-    .MuiInputBase-input {
-        font-size: 12px; // Justera storleken på det som skrivs i input
-      }
-    
-      .MuiFormLabel-root {
-        font-size: 15px; // Justera storleken på labeln
-      }
-    
+  .MuiInputBase-input {
+    font-size: 12px; // Justera storleken på det som skrivs i input
+  }
 
-        .NavLink{
-            text-decoration: none;
-            color: rgb(172, 63, 63);
-        }
-    
+  .MuiFormLabel-root {
+    font-size: 15px; // Justera storleken på labeln
+  }
 
-    .last-search-box{
-       font-size: smaller;
-    }
+  .last-search-box {
+    font-size: smaller;
+  }
 }
