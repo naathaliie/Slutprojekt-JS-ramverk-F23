@@ -41,18 +41,37 @@ const SearchedBookPage = () => {
       <div className="book-info" key={thisBook[0].key}>
         <h3>Titel:</h3>
         <p>{thisBook[0].title}</p>
-        <h6>Författare:</h6>
+        <h4>Författare:</h4>
         <p> {thisBook[0].author_name}</p>
-        <h6>Första mening:</h6>
-        <p>{thisBook[0].first_sentence[0]}</p>
-        <h6>Personer i boken:</h6>
-        <p>{thisBook[0].person.join(", ")}</p>
-        <h6>Utspelar sig:</h6>
-        <p>{thisBook[0].place.join(", ")}</p>
-        <h6>Språk:</h6>
+        {thisBook[0].first_sentence ? (
+          <>
+            <h4>Första mening:</h4>
+            <p>{thisBook[0].first_sentence[0]}</p>
+          </>
+        ) : (
+          <h4>Första mening: -</h4>
+        )}
+        {thisBook[0].person ? (
+          <>
+            <h4>Personer i boken:</h4>
+            <p>{thisBook[0].person.join(", ")}</p>
+          </>
+        ) : (
+          <h4>Personer i boken: -</h4>
+        )}
+        {thisBook[0].place ? (
+          <>
+            <h4>Utspelar sig:</h4>
+            <p>{thisBook[0].place.join(", ")}</p>
+          </>
+        ) : (
+          <h4>Utspelar sig: -</h4>
+        )}
+
+        <h4>Språk:</h4>
         <p>{thisBook[0].language.join(", ")}</p>
-        <h6>Genre:</h6>
-        <p>{thisBook[0].subject.slice(0, 5).join(", ")}</p>
+        <h4>Genre:</h4>
+        <p>{thisBook[0].subject.slice(0, 4).join(", ")}</p>
       </div>
       <div className="add-to-readBooks">
         {myPageStore.myReadBooksInfo.find((book) => {
