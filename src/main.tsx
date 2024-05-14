@@ -6,14 +6,14 @@ import "./main.scss";
 import RootPage from "./routes/RootPage/RootPage.tsx";
 import ErrorPage from "./routes/ErrorPage/ErrorPage.tsx";
 import SearchPage from "./routes/SearchPage/SearchPage.tsx";
-import SearchedBookPage from "./routes/SearchPage/SearchResultPage/SearchedBookPage.tsx";
 import { Provider } from "react-redux";
 import { store } from "./state/store.ts";
-import SearchedAuthorPage from "./routes/SearchPage/SearchResultPage/SearchedAuthorPage.tsx";
 import MyFavoritPage from "./routes/MyPage/MyfavoritsPage/MyFavoritPage.tsx";
 import OtherPage from "./routes/MyPage/OtherPage/OtherPage.tsx";
 import MyReadBooksPage from "./routes/MyPage/MyReadBooksPage/MyReadBooksPage.tsx";
 import AddReadBookPage from "./routes/MyPage/AddReadBookPage/AddReadBookPage.tsx";
+import SearchedAuthorPage from "./routes/SearchPage/SearchResultPage/SearchedAuthorPage/SearchedAuthorPage.tsx";
+import SearchedBookPage from "./routes/SearchPage/SearchResultPage/SearchedBookPage/SearchedBookPage.tsx";
 //The router for all the paths
 const router = createBrowserRouter([
   {

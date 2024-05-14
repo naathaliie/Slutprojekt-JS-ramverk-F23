@@ -1,13 +1,13 @@
 import { useParams } from "react-router-dom";
 import "./SearchedAuthorPage.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../../state/store";
-import { oneAuthor } from "../../../types/types";
+import { RootState } from "../../../../state/store";
+import { oneAuthor } from "../../../../types/types";
 import {
   addFavoritAuthor,
   removeFavoritAuthor,
-} from "../../../state/myPage/myPageSlice";
-import MyFavoritPage from "../../MyPage/MyfavoritsPage/MyFavoritPage";
+} from "../../../../state/myPage/myPageSlice";
+import MyFavoritPage from "../../../MyPage/MyfavoritsPage/MyFavoritPage";
 
 const SearchedAuthorPage = () => {
   const searchResult = useSelector(
