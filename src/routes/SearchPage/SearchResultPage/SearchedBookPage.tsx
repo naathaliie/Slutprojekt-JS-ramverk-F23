@@ -43,12 +43,16 @@ const SearchedBookPage = () => {
         <p>{thisBook[0].title}</p>
         <h6>Författare:</h6>
         <p> {thisBook[0].author_name}</p>
-        <h6>Format på bok:</h6>
-        <p>{thisBook[0].format.join(", ")}</p>
-        <h6>Genre:</h6>
-        <p>{thisBook[0].subject.join(", ")}</p>
+        <h6>Första mening:</h6>
+        <p>{thisBook[0].first_sentence[0]}</p>
+        <h6>Personer i boken:</h6>
+        <p>{thisBook[0].person.join(", ")}</p>
+        <h6>Utspelar sig:</h6>
+        <p>{thisBook[0].place.join(", ")}</p>
         <h6>Språk:</h6>
         <p>{thisBook[0].language.join(", ")}</p>
+        <h6>Genre:</h6>
+        <p>{thisBook[0].subject.slice(0, 5).join(", ")}</p>
       </div>
       <div className="add-to-readBooks">
         {myPageStore.myReadBooksInfo.find((book) => {

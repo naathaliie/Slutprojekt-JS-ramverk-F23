@@ -34,6 +34,7 @@ export type OneBook = {
   key: string;
   isbn: string[];
   person: string[];
+  place: string[];
   title: string;
   subject: string[];
   format: string[];
