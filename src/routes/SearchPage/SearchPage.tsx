@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { RootState } from "../../state/store";
 import { CircularProgress } from "@mui/material";
+import Loader from "../../components/Loader/Loader";
 
 const SearchPage = () => {
   const searchResult = useSelector(
@@ -12,7 +13,7 @@ const SearchPage = () => {
   return (
     <div className="SearchPage">
       {searchResult.loading ? (
-        <CircularProgress />
+        <Loader />
       ) : (
         <>
           {" "}
