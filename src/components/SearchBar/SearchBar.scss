@@ -5,26 +5,25 @@ flex-direction: column;
 
    
     .input-box{
-      
+      .input-search-btn{
+        background-color: hotpink;
+      }
     }
 
     .MuiInputBase-input {
-        font-size: 9px; // Justera storleken på det som skrivs i input
+        font-size: 12px; // Justera storleken på det som skrivs i input
       }
     
       .MuiFormLabel-root {
-        font-size: 10px; // Justera storleken på labeln
+        font-size: 15px; // Justera storleken på labeln
       }
     
-    .input-btn{
-        
-        margin-left: 3px;
 
         .NavLink{
             text-decoration: none;
             color: rgb(172, 63, 63);
         }
-    }
+    
 
     .last-search-box{
        font-size: smaller;

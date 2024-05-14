@@ -1,3 +1,5 @@
+@import "../../../scss/variables/mixins.scss";
+
 .MyReadBooksPage {
   max-width: 90vw;
   width: 90vw;
@@ -11,10 +13,26 @@
 
   .read-books-box {
     flex: 1; /* Tar upp så mycket utrymme som möjligt */
+
+    
   }
 
-  button {
-    width: auto;
-    height: 2rem;
+  h3 {
+    margin: 5px;
+  }
+  ul {
+    @include ul-list-mixin();
+    li {
+      margin-bottom: 0.5rem;
+    }
+    .link {
+      @include liAndlink-style-mixin();
+      &:hover {
+        font-weight: $font-weight-first;
+      }
+      &:active {
+        transform: translateX(1px);
+      }
+    }
   }
 }

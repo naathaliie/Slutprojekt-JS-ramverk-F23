@@ -19,40 +19,44 @@ const MyFavoritPage = () => {
   return (
     <div className="MyFavoritPage">
       <div className="favorit-books">
-        <p>Mina favorit böcker</p>
-        {favoritBooks.map((b, index) => {
-          return (
-            <div key={index}>
-              <p>{b.title}</p>
-              <button
-                onClick={() => {
-                  console.log("Ta bort som favorit");
-                  dispatch(removeFavoritBook(b.key));
-                }}
-              >
-                Ta bort favorit
-              </button>
-            </div>
-          );
-        })}
+        <h3>Mina favorit böcker</h3>
+        <ul>
+          {favoritBooks.map((b, index) => {
+            return (
+              <li key={index}>
+                {b.title}
+                <button
+                  onClick={() => {
+                    console.log("Ta bort som favorit");
+                    dispatch(removeFavoritBook(b.key));
+                  }}
+                >
+                  x
+                </button>
+              </li>
+            );
+          })}
+        </ul>
       </div>
       <div className="favorit-authors">
-        <p>Mina favorit författare</p>
-        {favoritAuthors.map((a, index) => {
-          return (
-            <div key={index}>
-              <p>{a.name}</p>
-              <button
-                onClick={() => {
-                  console.log("Ta bort som favorit");
-                  dispatch(removeFavoritAuthor(a.key));
-                }}
-              >
-                Ta bort
-              </button>
-            </div>
-          );
-        })}
+        <h3>Mina favorit författare</h3>
+        <ul>
+          {favoritAuthors.map((a, index) => {
+            return (
+              <li key={index}>
+                {a.name}
+                <button
+                  onClick={() => {
+                    console.log("Ta bort som favorit");
+                    dispatch(removeFavoritAuthor(a.key));
+                  }}
+                >
+                  x
+                </button>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </div>
   );

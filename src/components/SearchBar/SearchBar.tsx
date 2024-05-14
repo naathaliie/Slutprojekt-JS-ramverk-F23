@@ -58,13 +58,12 @@ const SearchBar = () => {
             inputRef={inputRef}
           />
           <Link key={"lastSearch"} to={"/searchPage"}>
-            <button onClick={handleClick}>
+            <button className="input-search-btn" onClick={handleClick}>
               <SearchIcon />
             </button>
           </Link>
         </Box>
       </div>
-      <div className="input-btn"></div>
       <div className="last-search-box">
         <Link key={"lastSearch"} to={"/searchPage"}>
           Senaste sökningen

@@ -12,10 +12,6 @@ const MyReadBooksPage = () => {
 
   return (
     <div className="MyReadBooksPage">
-      {/* 
-        <button> Lägg till bok</button>
-       */}
-
       <div className="read-books-box">
         <h3>Mina lästa böcker</h3>
         <ul>
@@ -25,6 +21,7 @@ const MyReadBooksPage = () => {
                 <Link
                   key={"addReadBook"}
                   to={`/myPage/myReadBooks/addBook/${book.title}`}
+                  className="link"
                 >
                   {book.title}
                 </Link>

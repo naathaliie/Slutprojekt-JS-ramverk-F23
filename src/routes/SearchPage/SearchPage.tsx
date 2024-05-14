@@ -12,10 +12,10 @@ const SearchPage = () => {
     <div className="SearchPage">
       <div className="found-books">
         <h3>Böcker</h3>
-        {searchResult.books.map((book) => {
-          return (
-            <ul key={book.key}>
-              <li>
+        <ul>
+          {searchResult.books.map((book) => {
+            return (
+              <li key={book.key}>
                 <Link
                   key={book.key}
                   to={`/searchPage/book/${book.title}`}
@@ -24,21 +24,27 @@ const SearchPage = () => {
                   {book.title}
                 </Link>
               </li>
-            </ul>
-          );
-        })}
+            );
+          })}
+        </ul>
       </div>
       <div className="found-authors">
         <h3>Författare</h3>
-        {searchResult.authors.map((author) => {
-          return (
-            <ul key={author.key}>
-              <Link key={author.key} to={`/searchPage/author/${author.name}`}>
-                <li> {author.name}</li>
-              </Link>
-            </ul>
-          );
-        })}
+        <ul>
+          {searchResult.authors.map((author) => {
+            return (
+              <li key={author.key}>
+                <Link
+                  key={author.key}
+                  to={`/searchPage/author/${author.name}`}
+                  className="link"
+                >
+                  {author.name}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </div>
   );

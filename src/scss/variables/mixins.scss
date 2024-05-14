@@ -1,0 +1,16 @@
+@import "./fonts.scss";
+@import "./colors.scss";
+
+@mixin ul-list-mixin() {
+  list-style: none;
+  margin-bottom: 0.5rem;
+}
+
+@mixin liAndlink-style-mixin() {
+  color: $color-pink;
+  font-family: $font-primary-montserrat;
+  font-size: $font-size-third;
+  font-weight: $font-weight-second;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+}

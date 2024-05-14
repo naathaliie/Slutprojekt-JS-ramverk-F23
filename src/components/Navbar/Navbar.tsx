@@ -3,6 +3,7 @@ import "./Navbar.scss";
 import SearchBar from "../SearchBar/SearchBar";
 import { Menu, MenuItem } from "@mui/material";
 import { useState } from "react";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 const Navbar = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -27,7 +28,9 @@ const Navbar = () => {
         </div>
 
         <div className="nav-myPage">
-          <span onClick={handleClick}>😍</span>
+          <span onClick={handleClick}>
+            <AccountCircleIcon sx={{ fontSize: "50px" }} />
+          </span>
           <Menu
             id="basic-menu"
             anchorEl={anchorEl}
