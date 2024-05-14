@@ -5,12 +5,12 @@
   width: 90vw;
   min-height: 80vh;
   display: flex;
-  
+  justify-content: space-between;
   margin: 1rem 10rem 1rem 10rem;
   border: solid black 2px;
-  padding: 1rem 0rem 1rem 0rem;
+  padding: 1rem 5rem 1rem 5rem;
   .found-books {
-    width: 60%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center; /* Centrera texten vertikalt */
@@ -27,8 +27,9 @@
   }
   ul {
     @include ul-list-mixin();
+    margin-top: 1rem;
     li{
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
     }
     .link {
       @include liAndlink-style-mixin();
