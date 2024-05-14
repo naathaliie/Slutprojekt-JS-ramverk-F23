@@ -1,29 +1,71 @@
+@import "/src/scss/variables/fonts.scss";
 .SearchedBookPage {
   max-width: 90vw;
   width: 90vw;
   min-height: 80vh;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin: 1rem 10rem 1rem 10rem;
-  gap: 2rem;
+
   border: solid black 2px;
-  
 
   .book-img {
     width: auto;
     height: auto;
-  /*   border: rgb(60, 255, 0) 2px solid; */
+    /*   border: rgb(60, 255, 0) 2px solid; */
   }
   .book-info {
-   /*  border: rgb(255, 0, 217) 2px solid; */
+    max-width: 60%;
   }
 
-  .add-to-favorits {
-    span {
-      font-size: 2rem;
+  .emoji-icon {
+    font-size: 30px;
+
+    &.read-book {
+      &.checked {
+        position: relative; /* Lägg till position: relative för att positionera ::after-pseudo-elementet relativt till knappen */
+        &:hover {
+          cursor: pointer;
+
+          &::after {
+            //pop-up infon
+            content: "Markerad som läst";
+            position: absolute;
+            top: 100%; /* Placera texten under ikonen */
+            left: 50%; /* Centrera texten horisontellt */
+            transform: translateX(-50%); /* Centrera texten horisontellt */
+            display: inline-block; /* Visa texten på egen rad */
+            font-size: $font-size-small;
+            padding: 0.5rem;
+            background-color: white; /* Om du vill ha bakgrundsfärg för texten */
+            border: 1px solid black; /* Om du vill ha en ram runt texten */
+            white-space: nowrap; /* Förhindra textomslag */
+          }
+        }
+      }
     }
-    p{
-        font-size: 10px;
+    &.favorit{
+      &.checked{
+        position: relative; /* Lägg till position: relative för att positionera ::after-pseudo-elementet relativt till knappen */
+        &:hover {
+          cursor: pointer;
+
+          &::after {
+            //pop-up infon
+            content: "Markerad som favorit";
+            position: absolute;
+            top: 100%; /* Placera texten under ikonen */
+            left: 50%; /* Centrera texten horisontellt */
+            transform: translateX(-50%); /* Centrera texten horisontellt */
+            display: inline-block; /* Visa texten på egen rad */
+            font-size: $font-size-small;
+            padding: 0.5rem;
+            background-color: white; /* Om du vill ha bakgrundsfärg för texten */
+            border: 1px solid black; /* Om du vill ha en ram runt texten */
+            white-space: nowrap; /* Förhindra textomslag */
+          }
+        }
+      }
     }
   }
 }

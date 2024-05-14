@@ -79,6 +79,7 @@ const SearchedBookPage = () => {
         }) ? (
           <>
             <span
+              className="emoji-icon read-book checked"
               onClick={() => {
                 console.log("Ta bort som läst");
                 dispatch(removeReadBook(thisBook[0].key));
@@ -86,10 +87,10 @@ const SearchedBookPage = () => {
             >
               ✅
             </span>
-            <p>Läst!</p>
           </>
         ) : (
           <span
+            className="emoji-icon read-book notChecked"
             onClick={() => {
               console.log("Lägg till som läst");
               dispatch(
@@ -108,13 +109,13 @@ const SearchedBookPage = () => {
             🟩
           </span>
         )}
-      </div>
-      <div className="add-to-favorits">
+
         {myPageStore.myFavorites.favoriteBooks.find((book) => {
           return book.key === thisBook[0].key;
         }) ? (
           <>
             <span
+              className="emoji-icon favorit checked"
               onClick={() => {
                 console.log("Lägg till som favorit");
                 dispatch(removeFavoritBook(thisBook[0].key));
@@ -122,10 +123,10 @@ const SearchedBookPage = () => {
             >
               ❤️
             </span>
-            <p>Sparad i favoriter</p>
           </>
         ) : (
           <span
+            className="emoji-icon favorit notChecked"
             onClick={() => {
               console.log("Lägg till som favorit");
               dispatch(addFavoritBook([thisBook[0]]));
