@@ -47,7 +47,7 @@ const myPageSlice = createSlice({
           });
     },
     removeReadBook: (state, action: PayloadAction<string>) => {
-      /* state.myReadBooksInfo = state.myFavorites.favoriteBooks.filter((book)=>{return book.key !== action.payload}); */
+       state.myReadBooksInfo = state.myReadBooksInfo.filter((book)=>{return book.key !== action.payload}); 
     },
   },
 });
