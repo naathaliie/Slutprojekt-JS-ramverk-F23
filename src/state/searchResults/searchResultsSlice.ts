@@ -4,6 +4,7 @@ import { GlobalSearchState } from "../../types/types";
 export const initialSearchResultState: GlobalSearchState = {
     authors: [],
     books: [],
+    loading: null,
   };
 
   const searchResultSlice = createSlice({
@@ -13,10 +14,13 @@ export const initialSearchResultState: GlobalSearchState = {
       setSearchResult: (state, action: PayloadAction<GlobalSearchState>)=>{
         state.authors = action.payload.authors;
         state.books = action.payload.books;
-      }
+      },
+      setLoading: (state, action: PayloadAction<boolean>) =>  {
+        state.loading = action.payload;
+      },
     },
   });
 
-  export const {setSearchResult} = searchResultSlice.actions;
+  export const {setSearchResult, setLoading} = searchResultSlice.actions;
   export default searchResultSlice.reducer;
   

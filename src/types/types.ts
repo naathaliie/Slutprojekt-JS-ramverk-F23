@@ -44,14 +44,9 @@ export type OneBook = {
 export type GlobalSearchState = {
   authors: oneAuthor[];
   books: OneBook[];
+  loading?: boolean | null;
 };
 
-
-/*****Lagt till i searchResultSlice, ta bort här?*****/
-export const initialSearchState: GlobalSearchState = {
-  authors: [],
-  books: [],
-};
 
 export type GlobalMyPageState = {
   myFavorites: {
