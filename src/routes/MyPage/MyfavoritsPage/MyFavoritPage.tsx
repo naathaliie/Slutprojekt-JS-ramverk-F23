@@ -46,14 +46,13 @@ const MyFavoritPage = () => {
             return (
               <li key={index}>
                 {a.name}
-                <button
-                  onClick={() => {
-                    console.log("Ta bort som favorit");
+                <MyButton
+                  icon={<DeleteIcon sx={{ fontSize: "15px" }} />}
+                  name="aBtn"
+                  onClickFunction={() => {
                     dispatch(removeFavoritAuthor(a.key));
                   }}
-                >
-                  x
-                </button>
+                />
               </li>
             );
           })}
