@@ -69,8 +69,15 @@ const SearchedBookPage = () => {
 
         <h4>Språk:</h4>
         <p>{thisBook[0].language.join(", ")}</p>
-        <h4>Genre:</h4>
-        <p>{thisBook[0].subject.slice(0, 4).join(", ")}</p>
+        {thisBook[0].subject ? (
+          <>
+            <h4>Genre:</h4>
+            <p>{thisBook[0].subject.slice(0, 4).join(", ")}</p>
+          </>
+        ) : (
+          <h4>Genre: -</h4>
+        )}
+
         {thisBook[0].number_of_pages_median !== undefined ? (
           <>
             <h4>Antal sidor:</h4>
