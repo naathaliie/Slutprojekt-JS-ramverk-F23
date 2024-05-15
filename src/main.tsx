@@ -11,9 +11,9 @@ import { store } from "./state/store.ts";
 import MyFavoritPage from "./routes/MyPage/MyfavoritsPage/MyFavoritPage.tsx";
 import OtherPage from "./routes/MyPage/OtherPage/OtherPage.tsx";
 import MyReadBooksPage from "./routes/MyPage/MyReadBooksPage/MyReadBooksPage.tsx";
-import AddReadBookPage from "./routes/MyPage/AddReadBookPage/AddReadBookPage.tsx";
 import SearchedAuthorPage from "./routes/SearchPage/SearchResultPage/SearchedAuthorPage/SearchedAuthorPage.tsx";
 import SearchedBookPage from "./routes/SearchPage/SearchResultPage/SearchedBookPage/SearchedBookPage.tsx";
+import AddReviewPage from "./routes/MyPage/AddReviewPage/AddReviewPage.tsx";
 //The router for all the paths
 const router = createBrowserRouter([
   {
@@ -48,7 +48,7 @@ const router = createBrowserRouter([
         children: [
           {
             path: "/myPage/myReadBooks/addBook/:readBook",
-            element: <AddReadBookPage />,
+            element: <AddReviewPage />,
           },
         ],
       },

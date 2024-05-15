@@ -1,18 +1,16 @@
 import { Link } from "react-router-dom";
-import "./AddReadBookPage.scss";
-import { useDispatch, useSelector } from "react-redux";
+import "./AddReviewPage.scss";
+import { useSelector } from "react-redux";
 import { RootState } from "../../../state/store";
 import { useState } from "react";
 import { OneReadBook } from "../../../types/types";
 import { useParams } from "react-router-dom";
 import { updateReadBook } from "../../../state/myPage/myPageSlice";
 
-const AddReadBookPage = () => {
+const AddReviewPage = () => {
   const myReadBooks = useSelector(
     (state: RootState) => state.myPageStore.myReadBooksInfo
   );
-
-  const dispatch = useDispatch();
 
   const params = useParams<{ readBook: string }>();
 
@@ -47,9 +45,8 @@ const AddReadBookPage = () => {
     });
   };
 
-  console.log("bajs", myReadBooks);
   return (
-    <div className="AddReadBookPage">
+    <div className="AddReviewPage">
       <h1>Lägg till recension</h1>
 
       <div className="book-info-box">
@@ -130,4 +127,4 @@ const AddReadBookPage = () => {
   );
 };
 
-export default AddReadBookPage;
+export default AddReviewPage;

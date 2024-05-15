@@ -71,5 +71,3 @@ const MyFavoritPage = () => {
 };
 
 export default MyFavoritPage;
-
-/* Fortsätt med att försöka få din sparade favorit att skrivas ut */
