@@ -1,11 +1,9 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import "./MyReadBooksPage.scss";
 import { RootState } from "../../../state/store";
 import { Link, Outlet } from "react-router-dom";
 
 const MyReadBooksPage = () => {
-  const dispatch = useDispatch();
-
   const readBooks = useSelector(
     (state: RootState) => state.myPageStore.myReadBooksInfo
   );
