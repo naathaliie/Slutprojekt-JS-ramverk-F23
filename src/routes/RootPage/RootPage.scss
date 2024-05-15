@@ -1,5 +1,7 @@
+@import "/src/scss/variables/fonts.scss";
 .Root-page{
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: $font-primary-montserrat;
 }

@@ -14,3 +14,22 @@
   text-decoration: none;
   margin-bottom: 0.5rem;
 }
+
+@mixin default-page-style() {
+  max-width: 90vw;
+  width: 90vw;
+  min-height: 80vh;
+  display: flex;
+  margin: 1rem 10rem 1rem 10rem;
+  padding-top: 1rem;
+  border: solid black 2px;
+}
+
+@mixin default-errorPage-style() {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}

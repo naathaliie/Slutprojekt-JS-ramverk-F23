@@ -1,15 +1,10 @@
 @import "../../scss/variables/fonts.scss";
 @import "../../scss/variables/colors.scss";
+@import "../../scss/variables/mixins.scss";
 
 .HomePage {
-  font-family: $font-primary-montserrat;
-  width: 90vw;
-  min-height: 80vh;
-  display: flex;
+  @include default-page-style();
   flex-direction: column;
-  margin: 1rem 10rem 1rem 10rem;
-  padding-top: 1rem;
-  border: solid black 2px;
 
   .img-box {
     margin: 5rem 10rem 0rem 10rem;

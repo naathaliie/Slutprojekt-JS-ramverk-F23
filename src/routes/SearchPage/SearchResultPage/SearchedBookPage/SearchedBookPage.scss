@@ -1,14 +1,10 @@
 @import "/src/scss/variables/fonts.scss";
+@import "/src/scss/variables/mixins.scss";
+
 .SearchedBookPage {
-  max-width: 90vw;
-  width: 90vw;
-  min-height: 80vh;
-  display: flex;
+  @include default-page-style();
   justify-content: space-between;
-  margin: 1rem 10rem 1rem 10rem;
-
-  border: solid rgba(8, 8, 8, 0.953) 2px;
-
+  padding: 1rem;
   .book-img {
     width: auto;
     height: auto;

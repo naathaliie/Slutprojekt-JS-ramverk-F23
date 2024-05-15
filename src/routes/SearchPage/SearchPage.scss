@@ -2,13 +2,10 @@
 @import "../../scss/variables/fonts.scss";
 
 .SearchPage {
-  width: 90vw;
-  min-height: 80vh;
-  display: flex;
+  @include default-page-style();
   justify-content: space-between;
-  margin: 1rem 10rem 1rem 10rem;
-  border: solid black 2px;
   padding: 1rem 5rem 1rem 5rem;
+
   .found-books {
     width: 40%;
     display: flex;
@@ -28,7 +25,7 @@
   ul {
     @include ul-list-mixin();
     margin-top: 1rem;
-    li{
+    li {
       margin-bottom: 1rem;
     }
     .link {

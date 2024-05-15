@@ -1,20 +1,11 @@
 @import "../../../scss/variables/mixins.scss";
 
 .MyReadBooksPage {
-  max-width: 90vw;
-  width: 90vw;
-  min-height: 80vh;
-  display: flex;
-  justify-content: space-between; /* Placerar element på motsatta sidor av container */
-  align-items: flex-start; /* Justerar vertikal placering till toppen */
-  margin: 1rem 10rem 1rem 10rem;
-  gap: 2rem;
-  border: solid black 2px;
+  @include default-page-style();
+  padding: 1rem;
 
   .read-books-box {
     flex: 1; /* Tar upp så mycket utrymme som möjligt */
-
-    
   }
 
   h3 {
