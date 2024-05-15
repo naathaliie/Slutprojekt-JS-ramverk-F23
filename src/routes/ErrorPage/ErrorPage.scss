@@ -1,17 +1,14 @@
 @import "../../scss/variables/colors.scss";
 @import "../../scss/variables/mixins.scss";
 
-.ErrorPage{
-   @include default-errorPage-style();
+.ErrorPage {
+  @include default-errorPage-style();
 
-   .goHome{
-    background-color: $color-button-green;
+  .home-btn {
     border: 2px $color-button-dark-green solid;
     border-radius: 10px;
-    width: auto;
-    height: auto;
     padding: 0.5rem;
+    background-color: $color-button-green;
     color: $color-button-dark-green;
-    text-decoration: none;
-   }
+  }
 }

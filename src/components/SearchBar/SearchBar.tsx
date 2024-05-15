@@ -13,7 +13,7 @@ const SearchBar = () => {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
 
-  //För att få tillgång till globalstate-redux. Behövs inte här?
+  //För att få tillgång till globalstate-redux. Behövs inte här men jag vill se vad som händer
   const searchResult = useSelector(
     (state: RootState) => state.searchResultStore
   );

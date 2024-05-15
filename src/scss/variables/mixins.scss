@@ -33,3 +33,14 @@
   justify-content: center;
   gap: 3rem;
 }
+
+@mixin default-navBar-style(){
+  border: solid black 2px;
+  height: 5rem;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* Dela upp navbar i tre kolumner med samma storlek */
+  align-items: center;
+  margin-top: 5px;
+  padding: 0px 10px 0px 10px;
+}

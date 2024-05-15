@@ -1,14 +1,8 @@
 @import "../../scss/variables/colors.scss";
+@import "../../scss/variables/mixins.scss";
 
 .NavBar {
-  border: solid black 2px;
-  height: 5rem;
-  width: 100vw;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr; /* Dela upp navbar i tre kolumner med samma storlek */
-  align-items: center;
-  margin-top: 5px;
-  padding: 0px 10px 0px 10px;
+  @include default-navBar-style();
   .nav-search {
     justify-self: start; /* Placera längst till vänster */
   }

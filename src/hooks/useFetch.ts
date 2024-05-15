@@ -64,7 +64,4 @@ export const useFetch = (searchTerm: string) => {
   return { foundBookData, foundAuthorData };
 };
 
-{
-  /* const fetchedData = useFetch<T>("https://openlibrary.org/search.json?q=/the-lord-of-the-rings");
-   */
-}
+
