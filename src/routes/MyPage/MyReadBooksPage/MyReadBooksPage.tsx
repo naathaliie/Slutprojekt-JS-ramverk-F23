@@ -18,8 +18,8 @@ const MyReadBooksPage = () => {
               return (
                 <li key={book.key}>
                   <Link
-                    key={"addReadBook"}
-                    to={`/myPage/myReadBooks/addBook/${book.title}`}
+                    key={"addRewiev"}
+                    to={`/myPage/myReadBooks/addRewiev/${book.title}`}
                     className="link"
                   >
                     {book.title}

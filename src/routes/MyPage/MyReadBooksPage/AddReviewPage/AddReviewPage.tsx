@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import "./AddReviewPage.scss";
 import { useSelector } from "react-redux";
-import { RootState } from "../../../state/store";
+import { RootState } from "../../../../state/store";
 import { useState } from "react";
-import { OneReadBook } from "../../../types/types";
+import { OneReadBook } from "../../../../types/types";
 import { useParams } from "react-router-dom";
-import { updateReadBook } from "../../../state/myPage/myPageSlice";
+import { updateReadBook } from "../../../../state/myPage/myPageSlice";
 
 const AddReviewPage = () => {
   const myReadBooks = useSelector(
