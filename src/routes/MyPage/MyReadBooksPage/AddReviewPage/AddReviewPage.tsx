@@ -6,6 +6,9 @@ import { useState } from "react";
 import { OneReadBook } from "../../../../types/types";
 import { useParams } from "react-router-dom";
 import { addRewiev } from "../../../../state/myPage/myPageSlice";
+import MyButton from "../../../../components/Button/MyButton";
+import CheckIcon from "@mui/icons-material/Check";
+import ClearIcon from "@mui/icons-material/Clear";
 
 const AddReviewPage = () => {
   const myReadBooks = useSelector(
@@ -33,6 +36,20 @@ const AddReviewPage = () => {
     setReview(e.target.value);
   };
 
+  const handleAddClick = () => {
+    dispatch(
+      addRewiev([
+        {
+          key: thisBook[0].key,
+          title: thisBook[0].title,
+          pages: thisBook[0].pages,
+          likes: like,
+          review: review,
+        },
+      ])
+    );
+  };
+
   console.log("mina lästa böcker ", myReadBooks);
 
   return (
@@ -47,8 +64,22 @@ const AddReviewPage = () => {
       <div className="input-box">
         <form className="form-bookReview">
           <div className="form-bookReview">
-            <fieldset>
-              <legend>Betyg:</legend>
+            <label htmlFor="review">
+              <h3>Skriv en recension:</h3>{" "}
+            </label>
+            <input
+              type="text"
+              name="review"
+              id="review"
+              onChange={handleReviewChange}
+              required
+            />
+          </div>
+          <div className="form-bookReview">
+            <fieldset className="fieldset">
+              <legend>
+                <h3>Betyg:</h3>
+              </legend>
               <div>
                 <input
                   type="radio"
@@ -84,42 +115,28 @@ const AddReviewPage = () => {
               </div>
             </fieldset>
           </div>
-          <div className="form-bookReview">
-            <label htmlFor="review">Skriv en recension: </label>
-            <input
-              type="text"
-              name="review"
-              id="review"
-              onChange={handleReviewChange}
-              required
-            />
-          </div>
         </form>
       </div>
-      <div className="btns">
+      <div className="btns-box">
         <Link key={"readBooks"} to={"/myPage/myReadBooks"}>
-          <button>stäng</button>
+          <MyButton icon={<ClearIcon />} name="back-btn" />
         </Link>
-        <button
-          onClick={() => {
-            dispatch(
-              addRewiev([
-                {
-                  key: thisBook[0].key,
-                  title: thisBook[0].title,
-                  pages: thisBook[0].pages,
-                  likes: like,
-                  review: review,
-                },
-              ])
-            );
-          }}
-        >
-          Lägg till
-        </button>
+        <MyButton
+          onClickFunction={handleAddClick}
+          icon={<CheckIcon />}
+          name="add-btn"
+        />
       </div>
-      <div className="removez">
-        <p>{thisBook[0].review}</p>
+      <div className="my-rewiev-box">
+        <h2>Din recension</h2>
+        <div className="rewiev">
+          <h5>Betyg:</h5>
+          <p> {thisBook[0].likes !== "" ? thisBook[0].likes : "-"}</p>
+        </div>
+        <div className="rewiev">
+          <h5>Recension: </h5>
+          <p>{thisBook[0].review !== "" ? thisBook[0].review : "-"}</p>
+        </div>
       </div>
     </div>
   );

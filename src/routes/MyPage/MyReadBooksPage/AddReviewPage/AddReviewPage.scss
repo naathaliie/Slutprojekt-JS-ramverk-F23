@@ -1,25 +1,47 @@
+@import "/src/scss/variables/colors.scss";
+
 .AddReviewPage {
-  border: 3px solid hotpink;
+  
   height: 30rem;
-  width: 20rem;
-  background-color: hotpink;
-  
+  width: 30rem;
+  border: 3px solid $color-purple;
+  background-color: $color-pink;
+  h1{
+    text-align: center;
+    margin-bottom: 2rem;
+  }
 
+  .input-box {
+    .fieldset{
+      color: $color-white;
+      border: 2px solid $color-white;
+      width: 20rem;
+    }
+  }
+.btns-box{
   
-.input-box{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* Lika breda kolumner för alla tre element */
-    grid-gap: 10px; /* Justera efter behov */
+  .back-btn{
+    background-color: $color-button-dark-red;
+    margin-right: 5px;
+  }
+  .add-btn{
+    background-color: $color-button-dark-green;
+  }
+
 }
 
-.removez{
-  width: 10rem;
-  height: 10rem;
-  
+  .my-rewiev-box {
+    text-align: center;
+    .rewiev{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      h5{
+        margin-right: 8px;
+      }
+    }
+  }
 }
-}
-
-
 
 /*
 FÖR ATT PLACERA HELA KOMPONENTEN STATISKT
