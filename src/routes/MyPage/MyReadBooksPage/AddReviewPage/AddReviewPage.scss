@@ -4,8 +4,8 @@
   
   height: 30rem;
   width: 30rem;
-  border: 3px solid $color-purple;
-  background-color: $color-pink;
+  border: 3px solid $color-dark-purple;
+  background-color: $color-purple;
   h1{
     text-align: center;
     margin-bottom: 2rem;
@@ -19,18 +19,26 @@
     }
   }
 .btns-box{
-  
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  border-radius: 10%;
   .back-btn{
-    background-color: $color-button-dark-red;
+    background-color: $color-button-red;
     margin-right: 5px;
+    border-radius: 30%;
   }
   .add-btn{
-    background-color: $color-button-dark-green;
+    background-color: $color-button-green;
+    border-radius: 30%;
   }
 
 }
 
   .my-rewiev-box {
+    margin-top: 5px;
+    padding-top: 5px;
+    border-top: solid $color-white 5px;
     text-align: center;
     .rewiev{
       display: flex;
