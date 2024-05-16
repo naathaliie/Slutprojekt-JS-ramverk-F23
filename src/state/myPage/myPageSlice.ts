@@ -40,11 +40,16 @@ const myPageSlice = createSlice({
     addReadBook: (state, action: PayloadAction<OneReadBook[]>) => {
       state.myReadBooksInfo.push(...action.payload);
     },
-    updateReadBook: (state, action: PayloadAction<OneReadBook[]>) => {
-        state.myReadBooksInfo = state.myReadBooksInfo.map((book) => {
-            const updatedBook = action.payload.find((updated) => updated.key === book.key);
-            return updatedBook ? updatedBook : book;
-          });
+    addRewiev: (state, action: PayloadAction<OneReadBook[]>) => {
+      state.myReadBooksInfo = state.myReadBooksInfo.map((book) => {
+        if (book.key === action.payload[0].key) {
+          // Om bokens nyckel matchar, ersätt den med hela payload-objektet
+          return action.payload[0];
+        } else {
+          // Om bokens nyckel inte matchar, behåll boken oförändrad
+          return book;
+        }
+      });
     },
     removeReadBook: (state, action: PayloadAction<string>) => {
        state.myReadBooksInfo = state.myReadBooksInfo.filter((book)=>{return book.key !== action.payload}); 
@@ -59,6 +64,12 @@ export const {
   removeFavoritAuthor,
   addReadBook,
   removeReadBook,
-  updateReadBook,
+  addRewiev,
 } = myPageSlice.actions;
 export default myPageSlice.reducer;
+
+
+/* .map((book) => {
+            const updatedBook = action.payload.find((updated) => updated.key === book.key);
+            return updatedBook ? updatedBook : book;
+          }); */

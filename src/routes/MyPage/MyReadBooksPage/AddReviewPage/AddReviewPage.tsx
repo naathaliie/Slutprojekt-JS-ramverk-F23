@@ -1,61 +1,47 @@
 import { Link } from "react-router-dom";
 import "./AddReviewPage.scss";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../../state/store";
 import { useState } from "react";
 import { OneReadBook } from "../../../../types/types";
 import { useParams } from "react-router-dom";
-import { updateReadBook } from "../../../../state/myPage/myPageSlice";
+import { addRewiev } from "../../../../state/myPage/myPageSlice";
 
 const AddReviewPage = () => {
   const myReadBooks = useSelector(
     (state: RootState) => state.myPageStore.myReadBooksInfo
   );
-
+  const dispatch = useDispatch();
   const params = useParams<{ readBook: string }>();
 
   const thisBook: OneReadBook[] = myReadBooks.filter((book) => {
     return params.readBook === book.title;
   });
 
-  const [formData, setFormData] = useState<OneReadBook>({
-    key: thisBook[0].key,
-    title: thisBook[0].title,
-    pages: thisBook[0].pages,
-    likes: "",
-    review: "",
-  });
-
-  /* const [selectedLike, setSelectedLike] = useState<string>("");
-  const [typedRewiev, setTypedReview] = useState<string>(""); */
+  const [review, setReview] = useState<string>("");
+  const [like, setLike] = useState<"Worst" | "ok" | "Great" | "">(
+    thisBook[0].likes
+  );
 
   const handleLikeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    // Uppdatera formData med det valda "likes" alternativet
-    setFormData({
-      ...formData,
-      likes: e.target.value as "Worst" | "ok" | "Great",
-    });
+    setLike(e.target.value as "Worst" | "ok" | "Great" | "");
   };
 
   const handleReviewChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    // Uppdatera formData med det valda "likes" alternativet
-    setFormData({
-      ...formData,
-      review: e.target.value,
-    });
+    setReview(e.target.value);
   };
+
+  console.log("mina lästa böcker ", myReadBooks);
 
   return (
     <div className="AddReviewPage">
       <h1>Lägg till recension</h1>
-
       <div className="book-info-box">
         <h3>Titel</h3>
         <p>{thisBook[0].title}</p>
         <h3>Antal sidor</h3>
         <p>{thisBook[0].pages}</p>
       </div>
-
       <div className="input-box">
         <form className="form-bookReview">
           <div className="form-bookReview">
@@ -68,10 +54,10 @@ const AddReviewPage = () => {
                   name="likes"
                   value="Worst"
                   onChange={handleLikeChange}
+                  checked={like === "Worst"}
                 />
                 <label htmlFor="likeChoice1">Worst</label>
               </div>
-
               <div>
                 <input
                   type="radio"
@@ -79,10 +65,10 @@ const AddReviewPage = () => {
                   name="likes"
                   value="ok"
                   onChange={handleLikeChange}
+                  checked={like === "ok"}
                 />
                 <label htmlFor="likeChoice2">ok</label>
               </div>
-
               <div>
                 <input
                   type="radio"
@@ -90,6 +76,7 @@ const AddReviewPage = () => {
                   name="likes"
                   value="Great"
                   onChange={handleLikeChange}
+                  checked={like === "Great"}
                 />
                 <label htmlFor="likeChoice3">Great</label>
               </div>
@@ -107,14 +94,23 @@ const AddReviewPage = () => {
           </div>
         </form>
       </div>
-
       <div className="btns">
         <Link key={"readBooks"} to={"/myPage/myReadBooks"}>
           <button>stäng</button>
         </Link>
         <button
           onClick={() => {
-            updateReadBook([formData]);
+            dispatch(
+              addRewiev([
+                {
+                  key: thisBook[0].key,
+                  title: thisBook[0].title,
+                  pages: thisBook[0].pages,
+                  likes: like,
+                  review: review,
+                },
+              ])
+            );
           }}
         >
           Lägg till
