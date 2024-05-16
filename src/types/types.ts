@@ -60,7 +60,7 @@ export type OneReadBook = {
   key: string;
   title: string;
   pages: number;
-  likes: "Worst"|"ok"|"Great"|"";
+  likes: "inte min grej"|"helt ok"|"bästa jag läst"|"";
   review: string;
 };
 

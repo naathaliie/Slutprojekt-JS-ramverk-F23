@@ -19,12 +19,14 @@ const AddReviewPage = () => {
   });
 
   const [review, setReview] = useState<string>("");
-  const [like, setLike] = useState<"Worst" | "ok" | "Great" | "">(
-    thisBook[0].likes
-  );
+  const [like, setLike] = useState<
+    "inte min grej" | "helt ok" | "bästa jag läst" | ""
+  >(thisBook[0].likes);
 
   const handleLikeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setLike(e.target.value as "Worst" | "ok" | "Great" | "");
+    setLike(
+      e.target.value as "inte min grej" | "helt ok" | "bästa jag läst" | ""
+    );
   };
 
   const handleReviewChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -52,33 +54,33 @@ const AddReviewPage = () => {
                   type="radio"
                   id="likeChoice1"
                   name="likes"
-                  value="Worst"
+                  value="inte min grej"
                   onChange={handleLikeChange}
-                  checked={like === "Worst"}
+                  checked={like === "inte min grej"}
                 />
-                <label htmlFor="likeChoice1">Worst</label>
+                <label htmlFor="likeChoice1">inte min grej</label>
               </div>
               <div>
                 <input
                   type="radio"
                   id="likeChoice2"
                   name="likes"
-                  value="ok"
+                  value="helt ok"
                   onChange={handleLikeChange}
-                  checked={like === "ok"}
+                  checked={like === "helt ok"}
                 />
-                <label htmlFor="likeChoice2">ok</label>
+                <label htmlFor="likeChoice2">helt ok</label>
               </div>
               <div>
                 <input
                   type="radio"
                   id="likeChoice3"
                   name="likes"
-                  value="Great"
+                  value="bästa jag läst"
                   onChange={handleLikeChange}
-                  checked={like === "Great"}
+                  checked={like === "bästa jag läst"}
                 />
-                <label htmlFor="likeChoice3">Great</label>
+                <label htmlFor="likeChoice3">bästa jag läst</label>
               </div>
             </fieldset>
           </div>
