@@ -21,10 +21,11 @@
     font-size: 30px;
 
     &.read-book {
+      cursor: pointer;
       &.checked {
+        
         position: relative; /* Lägg till position: relative för att positionera ::after-pseudo-elementet relativt till knappen */
         &:hover {
-          cursor: pointer;
 
           &::after {
             //pop-up infon
@@ -44,10 +45,11 @@
       }
     }
     &.favorit{
+      cursor: pointer;
       &.checked{
         position: relative; /* Lägg till position: relative för att positionera ::after-pseudo-elementet relativt till knappen */
         &:hover {
-          cursor: pointer;
+          
 
           &::after {
             //pop-up infon

@@ -7,7 +7,7 @@ function HomePage() {
   return (
     <div className="HomePage">
       <div className="info-box">
-        <h1>Mitt Bibliotek</h1>
+        <h1>Ditt Bibliotek</h1>
         <p>
           Utforska världar, förvärva kunskap - Välkommen till ditt bibliotek
           utan gränser!
