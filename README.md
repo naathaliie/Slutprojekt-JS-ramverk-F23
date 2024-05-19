@@ -39,7 +39,7 @@ Before you begin, ensure you have met the following requirements:
 
 ## How to contribute
 
-To contribute, follow these steps:
+-
 
 ## Author
 
