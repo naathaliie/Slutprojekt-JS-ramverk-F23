@@ -30,11 +30,16 @@ const SearchedBookPage = () => {
   console.log("Mina favorit böcker", myPageStore.myFavorites.favoriteBooks);
   console.log("Mina lästa böcker", myPageStore.myReadBooksInfo);
 
+  if (thisBook.length === 0) {
+    return <div className="SearchedBookPage"> Boken hittades inte</div>;
+  }
+
   return (
     <div className="SearchedBookPage">
       <div className="book-img">
         <img
-          src={`https://covers.openlibrary.org/b/isbn/${thisBook[0].isbn[0]}-M.jpg`}
+          src={`https://covers.openlibrary.org/b/id/${thisBook[0].cover_i}-M.jpg`}
+          alt="bild"
         />
       </div>
       <div className="book-info" key={thisBook[0].key}>
