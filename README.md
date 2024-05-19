@@ -37,10 +37,6 @@ Before you begin, ensure you have met the following requirements:
 4. Start the development server:
    `npm run dev`
 
-## How to contribute
-
--
-
 ## Author
 
 Nathalie Larsson
