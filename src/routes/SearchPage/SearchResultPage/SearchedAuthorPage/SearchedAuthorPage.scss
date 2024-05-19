@@ -5,12 +5,12 @@
   @include default-page-style();
   justify-content: space-around;
   .author-img {
-    width: auto;
-    height: auto;
-    background-color: pink;
+    img {
+      width: 10rem;
+      height: 10rem;
+    }
   }
-  .author-info {
-  }
+
   .add-to-favorits {
     span {
       font-size: 2rem;
@@ -22,8 +22,8 @@
   }
   .emoji-icon {
     font-size: 30px;
-    &.favorit{
-      &.checked{
+    &.favorit {
+      &.checked {
         position: relative; /* Lägg till position: relative för att positionera ::after-pseudo-elementet relativt till knappen */
         &:hover {
           cursor: pointer;

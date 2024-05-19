@@ -7,6 +7,7 @@ import {
   addFavoritAuthor,
   removeFavoritAuthor,
 } from "../../../../state/myPage/myPageSlice";
+import noImg from "../../../../assets/noImg.png";
 
 const SearchedAuthorPage = () => {
   const searchResult = useSelector(
@@ -31,7 +32,7 @@ const SearchedAuthorPage = () => {
   return (
     <div className="SearchedAuthorPage">
       <div className="author-img">
-        <p>här ska det vara en bild</p>
+        <img src={noImg} alt="" />
       </div>
       <div className="author-info" key={thisAuthor[0].key}>
         <h3>Namn: </h3>

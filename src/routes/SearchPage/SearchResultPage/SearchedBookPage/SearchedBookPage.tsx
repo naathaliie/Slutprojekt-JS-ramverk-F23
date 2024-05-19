@@ -10,6 +10,8 @@ import {
   removeReadBook,
 } from "../../../../state/myPage/myPageSlice";
 
+import noImg from "../../../../assets/noImg.png";
+
 const SearchedBookPage = () => {
   const searchresult = useSelector(
     (state: RootState) => state.searchResultStore.books
@@ -37,10 +39,14 @@ const SearchedBookPage = () => {
   return (
     <div className="SearchedBookPage">
       <div className="book-img">
-        <img
-          src={`https://covers.openlibrary.org/b/id/${thisBook[0].cover_i}-M.jpg`}
-          alt="bild"
-        />
+        {thisBook[0].cover_i ? (
+          <img
+            src={`https://covers.openlibrary.org/b/id/${thisBook[0].cover_i}-M.jpg`}
+            alt="bild"
+          />
+        ) : (
+          <img src={noImg} alt="bild" />
+        )}
       </div>
       <div className="book-info" key={thisBook[0].key}>
         <h3>Titel:</h3>
