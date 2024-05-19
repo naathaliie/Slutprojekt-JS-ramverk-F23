@@ -1,8 +1,10 @@
 
 @import "../../scss/variables/mixins.scss";
+@import "../../scss/variables/colors.scss";
 
 .HomePage {
   @include default-page-style();
+  background-color: $color-white-light-transparant;
   flex-direction: column;
 
   .img-box {
