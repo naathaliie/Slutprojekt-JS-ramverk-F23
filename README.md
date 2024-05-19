@@ -6,11 +6,11 @@ In this project, users can search for books or authors and get clickable results
 
 This project is built using the following technologies:
 
-TypeScript
-Vite
-Redux
-Axios
-Sass
+-TypeScript
+-Vite
+-Redux
+-Axios
+-Sass
 
 ## Prerequisites
 
