@@ -49,6 +49,8 @@ const SearchedBookPage = () => {
         )}
       </div>
       <div className="book-info" key={thisBook[0].key}>
+        <h3>Backgrundstext</h3>
+        {}
         <h3>Titel:</h3>
         <p>{thisBook[0].title}</p>
         <h4>Författare:</h4>
