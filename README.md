@@ -16,11 +16,11 @@ This project is built using the following technologies:
 
 Before you begin, ensure you have met the following requirements:
 
-- ** Node.js: **
+- **Node.js:**
   Install Node.js from nodejs.org, version 14.x or higher.
-- ** npm: **
+- **npm:**
   npm is installed with Node.js. You can check the version with npm -v.
-- ** Git: **
+- **Git:**
   Install Git from git-scm.com.
 
 ## Installation/setup
