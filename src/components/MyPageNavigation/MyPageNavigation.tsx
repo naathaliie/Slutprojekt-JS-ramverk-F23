@@ -27,33 +27,27 @@ const MyPageNavigation = () => {
           "aria-labelledby": "basic-button",
         }}
       >
-        <MenuItem onClick={handleClose}>
-          <Link
-            style={{ color: "hotpink", textDecoration: "none" }}
-            key={"favorits"}
-            to={"/myPage/myFavorits"}
-          >
-            Mina favoriter
-          </Link>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Link
-            style={{ color: "hotpink", textDecoration: "none" }}
-            key={"readBooks"}
-            to={"/myPage/myReadBooks"}
-          >
-            Mina lästa böcker
-          </Link>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Link
-            style={{ color: "hotpink", textDecoration: "none" }}
-            key={"other"}
-            to={"/myPage/other"}
-          >
-            Övrigt
-          </Link>
-        </MenuItem>
+        <Link
+          style={{ color: "hotpink", textDecoration: "none" }}
+          key={"favorits"}
+          to={"/myPage/myFavorits"}
+        >
+          <MenuItem onClick={handleClose}>Mina favoriter</MenuItem>
+        </Link>
+        <Link
+          style={{ color: "hotpink", textDecoration: "none" }}
+          key={"readBooks"}
+          to={"/myPage/myReadBooks"}
+        >
+          <MenuItem onClick={handleClose}>Mina lästa böcker</MenuItem>
+        </Link>
+        <Link
+          style={{ color: "hotpink", textDecoration: "none" }}
+          key={"other"}
+          to={"/myPage/other"}
+        >
+          <MenuItem onClick={handleClose}>Övrigt</MenuItem>
+        </Link>
       </Menu>
     </div>
   );

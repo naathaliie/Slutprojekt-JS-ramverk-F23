@@ -11,7 +11,8 @@ const MyReadBooksPage = () => {
   return (
     <div className="MyReadBooksPage">
       <div className="read-books-box">
-        <h3>Mina lästa böcker</h3>
+        <h3>Mina lästa böcker </h3>
+        <p>(Klicka för att skriva recension)</p>
         {readBooks.length > 0 ? (
           <ul>
             {readBooks.map((book) => {
