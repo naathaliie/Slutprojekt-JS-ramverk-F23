@@ -8,10 +8,13 @@
   flex-direction: column;
 
   .img-box {
+    display: flex;
+    gap: 1rem;
     margin: 5rem 10rem 0rem 10rem;
     img {
       width: 20rem;
       height: 20rem;
+      border-radius: 10%;
     }
   }
   .info-box {
