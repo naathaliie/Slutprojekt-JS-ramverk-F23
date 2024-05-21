@@ -12,7 +12,6 @@ const MyButton: React.FC<MyButtonProps> = ({ onClickFunction, icon, name }) => {
       <button
         className={`MyButton ${name}`}
         onClick={onClickFunction && onClickFunction}
-        /* disabled={!onClickFunction} */
       >
         <span>{icon}</span>
       </button>

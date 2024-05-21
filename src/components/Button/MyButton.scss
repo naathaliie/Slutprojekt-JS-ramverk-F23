@@ -2,14 +2,14 @@
 .MyButton {
     width: auto;
     height: auto;
-    transition: transform 0.1s ease;
+    transition: transform 0.1s ease; //När du "släpper" knappen
   &:hover {
     cursor: pointer; /* Sätt pekaren till en hand när den hovras över */
 
   }
   &:active {
-    transform: translateY(1px); // Flytta knappen 5 pixlar åt höger när den är aktiv 
-    transition-duration: 0.05s; // Här minskas durationen för transition till 0.05s
+    transform: translateY(1px); // Flytta knappen x pixlar åt höger när den är aktiv 
+    transition-duration: 0.05s; // När du klickar ner knappen
 
 }
 }
