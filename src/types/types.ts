@@ -9,7 +9,7 @@ export type fetchedData = {
   start: number;
 };
 
-/*****SearchContext*****/
+
 
 export type oneAuthor = {
   key: string;

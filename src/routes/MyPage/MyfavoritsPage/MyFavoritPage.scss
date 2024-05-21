@@ -18,7 +18,7 @@
         margin-left: 10px;
         position: relative; /* Lägg till position: relative för att positionera ::after-pseudo-elementet relativt till knappen */
         &:hover {
-          cursor: pointer; /* Sätt pekaren till en hand när den hovras över */
+          cursor: pointer; 
           &::after {
             //pop-up infon
             content: "Ta bort"; /* Lägg till önskad text */

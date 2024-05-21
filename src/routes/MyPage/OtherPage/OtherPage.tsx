@@ -7,8 +7,6 @@ const OtherPage = () => {
     (state: RootState) => state.myPageStore.myReadBooksInfo
   );
 
-  console.log("myreadBooks, ", myreadBooks);
-
   const numbOfPages = myreadBooks.reduce((totalPages, book) => {
     return totalPages + book.pages;
   }, 0);
