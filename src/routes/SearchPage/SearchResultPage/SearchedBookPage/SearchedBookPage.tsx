@@ -10,7 +10,7 @@ import {
   removeReadBook,
 } from "../../../../state/myPage/myPageSlice";
 
-import noImg from "../../../../assets/noImg.png";
+import getBookDetails from "../../../../utils/getBookDetails";
 
 const SearchedBookPage = () => {
   const searchresult = useSelector(
@@ -20,17 +20,12 @@ const SearchedBookPage = () => {
   const dispatch = useDispatch();
 
   const params = useParams<{ foundId: string }>();
-  /* console.log("useparams", params.foundId);
-  console.log("Från seearchResult = ", searchresult); */
-
+  //Hitta den klickade boken
   const thisBook: OneBook[] = searchresult.filter((book) => {
     return params.foundId === book.title;
   });
-
-  console.log("thisBook ger mig = ", thisBook);
-
-  console.log("Mina favorit böcker", myPageStore.myFavorites.favoriteBooks);
-  console.log("Mina lästa böcker", myPageStore.myReadBooksInfo);
+  //Hämta ut de delar som skall renderas från en utility-function. Kontorllerar även om de finns eller inte direkt från funktionen istället för här i koden
+  const details = getBookDetails(thisBook[0]);
 
   if (thisBook.length === 0) {
     return <div className="SearchedBookPage"> Boken hittades inte</div>;
@@ -39,66 +34,25 @@ const SearchedBookPage = () => {
   return (
     <div className="SearchedBookPage">
       <div className="book-img">
-        {thisBook[0].cover_i ? (
-          <img
-            src={`https://covers.openlibrary.org/b/id/${thisBook[0].cover_i}-M.jpg`}
-            alt="bild"
-          />
-        ) : (
-          <img src={noImg} alt="bild" />
-        )}
+        <img src={details.cover_i} alt="bild" />
       </div>
-      <div className="book-info" key={thisBook[0].key}>
-        <h3>Backgrundstext</h3>
-        {}
+      <div className="book-info" key={details.key}>
         <h3>Titel:</h3>
-        <p>{thisBook[0].title}</p>
+        <p>{details.title}</p>
         <h4>Författare:</h4>
-        <p> {thisBook[0].author_name}</p>
-        {thisBook[0].first_sentence ? (
-          <>
-            <h4>Första mening:</h4>
-            <p>{thisBook[0].first_sentence[0]}</p>
-          </>
-        ) : (
-          <h4>Första mening: -</h4>
-        )}
-        {thisBook[0].person ? (
-          <>
-            <h4>Personer i boken:</h4>
-            <p>{thisBook[0].person.join(", ")}</p>
-          </>
-        ) : (
-          <h4>Personer i boken: -</h4>
-        )}
-        {thisBook[0].place ? (
-          <>
-            <h4>Utspelar sig:</h4>
-            <p>{thisBook[0].place.join(", ")}</p>
-          </>
-        ) : (
-          <h4>Utspelar sig: -</h4>
-        )}
-
+        <p>{details.author}</p>
+        <h4>Första mening:</h4>
+        <p>{details.first_sentence}</p>
+        <h4>Personer i boken:</h4>
+        <p>{details.persons}</p>
+        <h4>Utspelar sig:</h4>
+        <p>{details.place}</p>
         <h4>Språk:</h4>
-        <p>{thisBook[0].language.join(", ")}</p>
-        {thisBook[0].subject ? (
-          <>
-            <h4>Genre:</h4>
-            <p>{thisBook[0].subject.slice(0, 4).join(", ")}</p>
-          </>
-        ) : (
-          <h4>Genre: -</h4>
-        )}
-
-        {thisBook[0].number_of_pages_median !== undefined ? (
-          <>
-            <h4>Antal sidor:</h4>
-            <p>{thisBook[0].number_of_pages_median}</p>
-          </>
-        ) : (
-          <h4>Antal sidor: -</h4>
-        )}
+        <p>{details.language}</p>
+        <h4>Genre:</h4>
+        <p>{details.genre}</p>
+        <h4>Antal sidor:</h4>
+        <p>{details.numb_of_pages}</p>
       </div>
       <div className="add-to-readBooks">
         {myPageStore.myReadBooksInfo.find((book) => {
