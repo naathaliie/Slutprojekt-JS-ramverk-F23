@@ -26,9 +26,6 @@ const SearchedAuthorPage = () => {
     return params.foundId === author.name;
   });
 
-  console.log("this author ger mig = ", thisAuthor);
-  console.log("Mina favorit författare", myPageStore.favoriteAuthors);
-
   return (
     <div className="SearchedAuthorPage">
       <div className="author-img">
