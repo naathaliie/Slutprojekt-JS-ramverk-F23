@@ -17,59 +17,31 @@ const getBookDetails = (abook: OneBook) => {
   //Skapar upp ett objekt med det som skall renderas. Key finns alltid och sätts till i början
   const bookDetails: Partial<TheBookDetails> = { key: abook.key };
 
-  if (abook.cover_i) {
-    bookDetails.cover_i = `https://covers.openlibrary.org/b/id/${abook.cover_i}-M.jpg`;
-  } else {
-    bookDetails.cover_i = `${noImg}`;
-  }
+  bookDetails.cover_i = abook.cover_i
+    ? `https://covers.openlibrary.org/b/id/${abook.cover_i}-M.jpg`
+    : noImg;
 
-  if (abook.title) {
-    bookDetails.title = abook.title;
-  } else {
-    bookDetails.title = "-";
-  }
+  bookDetails.title = abook.title ? abook.title : "-";
 
-  if (abook.author_name) {
-    bookDetails.author = abook.author_name;
-  } else {
-    bookDetails.author = "-";
-  }
+  bookDetails.author = abook.author_name ? abook.author_name : "-";
 
-  if (abook.first_sentence) {
-    bookDetails.first_sentence = abook.first_sentence[0];
-  } else {
-    bookDetails.first_sentence = "-";
-  }
+  bookDetails.first_sentence = abook.first_sentence
+    ? abook.first_sentence[0]
+    : "-";
 
-  if (abook.person) {
-    bookDetails.persons = abook.person.join(", ");
-  } else {
-    bookDetails.persons = "-";
-  }
+  bookDetails.persons = abook.person ? abook.person.join(", ") : "-";
 
-  if (abook.place) {
-    bookDetails.place = abook.place.join(", ");
-  } else {
-    bookDetails.place = "-";
-  }
+  bookDetails.place = abook.place ? abook.place.join(", ") : "-";
 
-  if (abook.language) {
-    bookDetails.language = abook.language.join(", ");
-  } else {
-    bookDetails.place = "-";
-  }
+  bookDetails.language = abook.language ? abook.language.join(", ") : "-";
 
-  if (abook.subject) {
-    bookDetails.genre = abook.subject.slice(0, 4).join(", ");
-  } else {
-    bookDetails.genre = "-";
-  }
+  bookDetails.genre = abook.subject
+    ? abook.subject.slice(0, 4).join(", ")
+    : "-";
 
-  if (abook.number_of_pages_median) {
-    bookDetails.numb_of_pages = abook.number_of_pages_median;
-  } else {
-    bookDetails.numb_of_pages = "-";
-  }
+  bookDetails.numb_of_pages = abook.number_of_pages_median
+    ? abook.number_of_pages_median
+    : "-";
 
   return bookDetails;
 };
