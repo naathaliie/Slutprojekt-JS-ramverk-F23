@@ -15,7 +15,7 @@ type TheBookDetails = {
 
 const getBookDetails = (abook: OneBook) => {
   //Skapar upp ett objekt med det som skall renderas. Key finns alltid och sätts till i början
-  const bookDetails: Partial<TheBookDetails> = { key: abook.key };
+  const bookDetails: TheBookDetails = { key: abook.key };
 
   bookDetails.cover_i = abook.cover_i
     ? `https://covers.openlibrary.org/b/id/${abook.cover_i}-M.jpg`
